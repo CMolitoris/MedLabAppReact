@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Redirect, Routes, Route } from 'react-router';
+import { Redirect, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Login from './components/Login/Login';
 import RegisterUser from './components/RegisterUser/RegisterUser';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
+import Landing from './components/Landing/Landing';
 
 class App extends Component {
     constructor(props) {
@@ -110,9 +111,9 @@ class App extends Component {
                 {this.state.loginModalShow && <Login login = {this.loginUser} modalShow = {this.state.loginModalShow} toggleModal={this.toggleLoginModal}/>}
                 {this.state.registerModalShow && <RegisterUser register={this.registerUser} modalShow={this.state.registerModalShow} toggleModal={this.toggleRegModal} registerUser={this.registerUser}/>}
                 <div>
-                    <Routes>
+                    <Switch>
                         {/* Home Page */}
-                        {/* <Route path = "/" exact component={Landing}  /> */}
+                        <Route path = "/" exact component={Landing}  />
                         {/* Product Page */}
                         {/* <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} />
                         
@@ -122,7 +123,7 @@ class App extends Component {
                         <Route path = "/account" render = {props => <EditAccount {...props } userInfo = {this.state.userInfo} updateDetails = {this.editUser} user = {this.state.loggedUser}/>} />
                         
                         <Redirect to='/not-found' /> */}
-                    </Routes>
+                    </Switch>
                 </div>
             </div>
 

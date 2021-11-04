@@ -1,0 +1,32 @@
+#main-panel{
+    background-color: #C9D6DF;
+    color: #1E2022;
+    margin: 1rem;
+    border-radius: 4rem;
+    
+  }
+
+.title{
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.container-attributes {
+    background-color: #C9D6DF;
+    padding: 4rem;
+    height: 25rem;
+    width: 70rem;
+    
+}
+
+.background-micro {
+    background-image: url("../Landing/microscope.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 0;
+    
+   
+}
+
