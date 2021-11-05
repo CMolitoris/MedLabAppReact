@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Landing.css';
-import {Image,Container, Row, Col, Card, Button} from 'react-bootstrap';
-import micro from '../Landing/microscope.jpg'
+import {Container, Row, Col, Card, Button} from 'react-bootstrap';
+
 
 
 class Landing extends Component {
@@ -12,7 +12,7 @@ class Landing extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <Container className='mx-auto  background-micro container-attributes container overflow-hidden shadow ' id="main-panel">
+                <Container className='mx-auto  background-micro con-attributes overflow-hidden shadow ' id="main-panel">
                     <Row></Row>
                     <Row >
                     <Col className=' align-items-center'></Col>

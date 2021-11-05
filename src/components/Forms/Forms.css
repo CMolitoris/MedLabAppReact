@@ -1,7 +1,15 @@
-.container-attributes {
+.con-attributes-form {
     background-color: #C9D6DF;
-    padding: 4rem;
-    height: 25rem;
-    width: 70rem;
+    padding: 6rem;
+    height: 100%;
+    width: 50rem;
+    color: #1E2022;
+    margin: 3rem;
+    border-radius: 2rem;
     
+}
+
+.post-title-font{
+    font-size: 2.2rem;
+    font-weight: 400;
 }

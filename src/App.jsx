@@ -115,8 +115,7 @@ class App extends Component {
                         {this.state.loginModalShow && <Login login = {this.loginUser} modalShow = {this.state.loginModalShow} toggleModal={this.toggleLoginModal}/>}
                         {this.state.registerModalShow && <RegisterUser register={this.registerUser} modalShow={this.state.registerModalShow} toggleModal={this.toggleRegModal} registerUser={this.registerUser}/>}
                         <div>
-                            <Switch>
-                                {/* Home Page */}
+                            <Switch>    
                                 <Route path = "/" exact component={Landing}  />
                                 <Route path = "/forms"  component={Forms} />
                                 {/* <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} /> */}
