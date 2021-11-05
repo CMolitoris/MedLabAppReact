@@ -9,25 +9,27 @@ const NavBar = (props) => {
 
     return ( 
         <nav className="navbar-color">
+          
             <ul className='nav justify-content-center offset-lg-4'>
+            <li className='nav-item'><Link to  = '/' className='nav-link'><i className="bi bi-tropical-storm"></i> Apex Solutions</Link></li>
                 <li className='nav-item'><Link to  = '/' className='nav-link'><i className="bi bi-house"></i> | Home</Link></li>
                 {!props.user && 
                     <React.Fragment>
                         <li >
-                            <a className='nav-link' onClick = {props.toggleLogModal}><i className="bi bi-door-closed"></i> | Log In</a>
+                            <a className='nav-link' onClick = {props.toggleLogModal}><i className="bi bi-key"></i> | Log In</a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link' onClick = {props.toggleRegisterModal}><i className="bi bi-person-check"></i> | Register</a>
+                            <a className='nav-link' onClick = {props.toggleRegisterModal}><i className="bi bi-shield-lock"></i> | Register</a>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/products' className='nav-link'><i className="bi bi-truck"></i> | Products </Link>
+                            <Link to='/products' className='nav-link navbar-text'><i className="bi bi-pen"></i> | Labs </Link>
                         </li>
                     </React.Fragment>
                 }
                 {props.user && 
                     <React.Fragment>
                         <li className='nav-item'>
-                            <Link to='/products' className='nav-link'><i className="bi bi-truck"></i> | Products </Link>
+                            <Link to='/products' className='nav-link'><i className="bi bi-pen"></i> | Labs </Link>
                         </li>
                         <li className='nav-item'>
                             <Link to='/account' className='nav-link'><i className="bi bi-person"></i> | Account</Link>

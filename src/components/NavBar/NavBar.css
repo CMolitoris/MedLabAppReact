@@ -1,4 +1,8 @@
 .navbar-color {
     background-color: #C9D6DF;
+    
+}
+
+.nav li a {
     color: #1E2022;
 }

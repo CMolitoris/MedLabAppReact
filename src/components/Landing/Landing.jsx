@@ -13,12 +13,19 @@ class Landing extends Component {
         return ( 
             <React.Fragment>
                 <Container className='mx-auto  background-micro container-attributes container overflow-hidden shadow ' id="main-panel">
-                    
-                    <Row className='row'>
-                        <Col className='col shadow align-items-center'>
-                            
+                    <Row></Row>
+                    <Row >
+                    <Col className=' align-items-center'></Col>
+                    <Col className=' align-items-center'></Col>
+                    <Col className=' align-items-center'></Col>
+                        <Col >
+                            <h2>
+                                <strong>Technology Meets Healthcare</strong>
+                            </h2>
+                            <Button style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}}>Get an Opinion</Button>
                         </Col>
                     </Row>
+                    
                    
                 </Container>
                 <Container className="mx-auto container-attributes" id="main-panel">
@@ -29,7 +36,7 @@ class Landing extends Component {
                                 <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
-                                        <hr/>
+                                    <hr/>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                     </Card.Text>
@@ -43,6 +50,7 @@ class Landing extends Component {
                                 <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
+                                    <hr/>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                     </Card.Text>
@@ -56,6 +64,7 @@ class Landing extends Component {
                                 <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
+                                    <hr/>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                     </Card.Text>
