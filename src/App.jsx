@@ -7,6 +7,7 @@ import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import Landing from './components/Landing/Landing';
 import { UserContext } from './UserContext';
+import Forms from './components/Forms/Forms';
 
 class App extends Component {
     constructor(props) {
@@ -105,30 +106,33 @@ class App extends Component {
 
     render() { 
         return ( 
-            <UserContext.Provider value={this.state.loggedUser}>
+            
                 <div className="App">
-                    <NavBar user = {this.state.loggedUser} login={this.loginUser} logoutUser = {this.logoutUser} 
-                        toggleLogModal = {this.toggleLoginModal} toggleRegisterModal = {this.toggleRegModal} 
-                    />
-                    {this.state.loginModalShow && <Login login = {this.loginUser} modalShow = {this.state.loginModalShow} toggleModal={this.toggleLoginModal}/>}
-                    {this.state.registerModalShow && <RegisterUser register={this.registerUser} modalShow={this.state.registerModalShow} toggleModal={this.toggleRegModal} registerUser={this.registerUser}/>}
-                    <div>
-                        <Switch>
-                            {/* Home Page */}
-                            <Route path = "/" exact component={Landing}  />
-                            <Route path = "/forms"  render = {props => <Forms {...props} />}/>
-                            <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} />
-                            
-                            {/* <Route path = "/car-details" render={props => <CarDetails {...props} postRating={this.postRating} user={this.state.loggedUser} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} ratings={this.state.ratings}/>} />
-                            
-                            
-                            <Route path = "/account" render = {props => <EditAccount {...props } userInfo = {this.state.userInfo} updateDetails = {this.editUser} user = {this.state.loggedUser}/>} />
-                            
-                            <Redirect to='/not-found' /> */}
-                        </Switch>
-                    </div>
+                    <UserContext.Provider value={this.state.loggedUser}>
+                        <NavBar user = {this.state.loggedUser} login={this.loginUser} logoutUser = {this.logoutUser} 
+                            toggleLogModal = {this.toggleLoginModal} toggleRegisterModal = {this.toggleRegModal} 
+                        />
+                        {this.state.loginModalShow && <Login login = {this.loginUser} modalShow = {this.state.loginModalShow} toggleModal={this.toggleLoginModal}/>}
+                        {this.state.registerModalShow && <RegisterUser register={this.registerUser} modalShow={this.state.registerModalShow} toggleModal={this.toggleRegModal} registerUser={this.registerUser}/>}
+                        <div>
+                            <Switch>
+                                {/* Home Page */}
+                                <Route path = "/" exact component={Landing}  />
+                                <Route path = "/forms"  component={Forms} />
+                                {/* <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} /> */}
+                                
+                                {/* <Route path = "/car-details" render={props => <CarDetails {...props} postRating={this.postRating} user={this.state.loggedUser} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} ratings={this.state.ratings}/>} />
+                                
+                                
+                                <Route path = "/account" render = {props => <EditAccount {...props } userInfo = {this.state.userInfo} updateDetails = {this.editUser} user = {this.state.loggedUser}/>} />
+                                
+                                <Redirect to='/not-found' /> */}
+                                <Redirect to="/not-found" />
+                            </Switch>
+                        </div>
+                    </UserContext.Provider>
                 </div>
-            </UserContext.Provider>
+           
 
 
 
