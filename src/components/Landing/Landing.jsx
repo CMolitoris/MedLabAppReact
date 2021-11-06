@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import './Landing.css';
 import {Container, Row, Col, Card, Button} from 'react-bootstrap';
+import { UserContext } from '../../UserContext';
 
 
 
-class Landing extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
+const Landing = () => {
+
+    const user = useContext(UserContext);
+    console.log(user)
+
+    const handleGetstarted = () => {
+        
+        if (!user) {
+            alert("You must login or register to continue!")
+        } else {
+            alert("You are logged in!")
+        }
     }
-    render() { 
-        return ( 
-            <React.Fragment>
+
+    return ( 
+        <React.Fragment>
                 <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' id="main-panel">
-                    <Row></Row>
-                    <Row >
-                    <Col></Col>
-                    <Col></Col>
-                    <Col></Col>
-                        <Col className="pad-top ">
-                            
-                                <h2>
-                                    <strong>Technology Meets <i>Healthcare</i></strong>
-                                </h2>
-                                <Button style={{background: "#1E2022",border: "#1E2022",Color: "#F0F5F9"}}>Get an Opinion</Button>
-                            
-                        </Col>
-                    </Row>
-                    
-                   
+                    <div className="opin-attributes ">
+                        <div className="opin-attributes-inner">
+                        <h2>
+                            <strong>Technology Meets <i>Healthcare</i></strong>
+                        </h2>
+                        </div>
+                        <Button onClick={() => handleGetstarted()} style={{background: "#1E2022",border: "#1E2022",divor: "#F0F5F9"}}>Get Started <i class="bi bi-check-square"></i></Button>
+                    </div>   
                 </div>
                 <div className=" mx-auto con-attributes" id="main-panel">
                     <Row className=" justify-content-center text-center">
@@ -77,9 +78,7 @@ class Landing extends Component {
                     </Row>
                 </div>
             </React.Fragment>
-
-         );
-    }
+     );
 }
  
 export default Landing;

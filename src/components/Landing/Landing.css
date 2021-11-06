@@ -19,6 +19,27 @@
     
 }
 
+.opin-attributes {
+    background-color: #C9D6DF;
+    padding: .5rem;
+    height: 100%rem;
+    width: 20rem;
+    margin-left: 45rem;
+    margin-top: 8rem;
+    border-radius: .3rem;
+    
+}
+
+.opin-attributes-inner {
+    background-color: #F0F5F9;
+    padding: .5rem;
+    height: 100%rem;
+    width: 100%rem;
+    border-radius: .3rem;
+    margin-bottom: .5rem;
+    
+}
+
 .background-micro {
     background-image: url("../Landing/microscope.jpg");
     -webkit-background-size: cover;
@@ -32,9 +53,6 @@
 
 .pad-top {
     padding-top:6.5rem;
+    
 }
 
-.phrase-box {
-    background-color: #C9D6DF;
-    border-radius: 2rem;
-}

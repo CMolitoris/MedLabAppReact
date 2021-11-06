@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createContext } from 'react';
 import { Redirect, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Login from './components/Login/Login';
@@ -7,6 +7,7 @@ import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import Landing from './components/Landing/Landing';
 import { UserContext } from './UserContext';
+
 import Forms from './components/Forms/Forms';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
     registerURL = "https://localhost:44394/api/authentication/"
     loginURL = "https://localhost:44394/api/authentication/login"
     updateAddressURL = "https://localhost:44394/api/users/complete/"
+    
 
     componentWillMount() {
         let id = this.getToken();
@@ -38,8 +40,9 @@ class App extends Component {
           });
           return user.id;
         } catch(err){
-            console.log("🚀 ~ file: App.jsx ~ line 26 ~ App ~ componentDidMount ~ err", err)
+            console.log("🚀 ~ file: App.jsx ~ line 43 ~ App ~ componentDidMount ~ err", err)
         }
+        
     }
 
     registerUser = async (userToRegister) => {
@@ -105,6 +108,7 @@ class App extends Component {
   
 
     render() { 
+        
         return ( 
             
                 <div className="App">

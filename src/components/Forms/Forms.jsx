@@ -10,17 +10,17 @@ const Forms = () => {
 
     return ( 
         <div className='mx-auto con-attributes-form shadow '>
-            <div className=" shadow">
+            <div className=" ">
                 
-                {testType==='' && <h2 className="post-title-font cent-style">Select Test</h2>}
-                {testType!=='' && <h2 className="post-title-font cent-style-two">Enter {testType} Results</h2>}
+                {testType==='' && <h2 className="shadow post-title-font cent-style">Select Test</h2>}
+                {testType!=='' && <h2 className="shadow post-title-font cent-style-two">Enter {testType} Results</h2>}
             </div>    
                 
                 
-            <div className="pad-left">
-                <Dropdown className=' mb-3' >
-                    <Dropdown.Toggle style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}}>
-                        Select Test Type
+            <div className="">
+                <Dropdown className=' cent-style-drop mb-3' >
+                    <Dropdown.Toggle bsPrefix="p-0" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}}>
+                    <i className="bi bi-chevron-double-down"></i>
                     </Dropdown.Toggle>
                     <Dropdown.Menu >
                         <Dropdown.Item as="button" onClick={() => setTestType("BMP")}>BMP</Dropdown.Item>
