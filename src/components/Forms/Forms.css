@@ -13,3 +13,23 @@
     font-size: 2.2rem;
     font-weight: 400;
 }
+
+.cent-style {
+    justify-content: center;
+    background-color: #52616B;
+    border-radius: 2rem;
+    color: #F0F5F9;
+    padding-left: 15rem;
+}
+
+.cent-style-two {
+    justify-content: center;
+    background-color: #52616B;
+    border-radius: 2rem;
+    color: #F0F5F9;
+    padding-left: 13rem;
+}
+
+.pad-left {
+    padding-left: 15rem;
+}

@@ -15,7 +15,7 @@
     background-color: #C9D6DF;
     padding: 4rem;
     height: 25rem;
-    width: 70rem;
+    width: 72rem;
     
 }
 
@@ -30,4 +30,11 @@
    
 }
 
+.pad-top {
+    padding-top:6.5rem;
+}
 
+.phrase-box {
+    background-color: #C9D6DF;
+    border-radius: 2rem;
+}

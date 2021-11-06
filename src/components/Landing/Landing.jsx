@@ -12,23 +12,25 @@ class Landing extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <Container className='mx-auto  background-micro con-attributes overflow-hidden shadow ' id="main-panel">
+                <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' id="main-panel">
                     <Row></Row>
                     <Row >
-                    <Col className=' align-items-center'></Col>
-                    <Col className=' align-items-center'></Col>
-                    <Col className=' align-items-center'></Col>
-                        <Col >
-                            <h2>
-                                <strong>Technology Meets Healthcare</strong>
-                            </h2>
-                            <Button style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}}>Get an Opinion</Button>
+                    <Col></Col>
+                    <Col></Col>
+                    <Col></Col>
+                        <Col className="pad-top ">
+                            
+                                <h2>
+                                    <strong>Technology Meets <i>Healthcare</i></strong>
+                                </h2>
+                                <Button style={{background: "#1E2022",border: "#1E2022",Color: "#F0F5F9"}}>Get an Opinion</Button>
+                            
                         </Col>
                     </Row>
                     
                    
-                </Container>
-                <Container className="mx-auto container-attributes" id="main-panel">
+                </div>
+                <div className=" mx-auto con-attributes" id="main-panel">
                     <Row className=" justify-content-center text-center">
                         <Col md="auto">
                             <Card style={{ width: '18rem', height: '18rem' }}>
@@ -73,7 +75,7 @@ class Landing extends Component {
                             </Card>
                         </Col>
                     </Row>
-                </Container>
+                </div>
             </React.Fragment>
 
          );
