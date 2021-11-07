@@ -24,10 +24,12 @@ const Landing = () => {
                 <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' id="main-panel">
                     <div className="opin-attributes ">
                         <div className="opin-attributes-inner">
-                        <h2>
-                            <strong>Technology Meets <i>Healthcare</i></strong>
-                        </h2>
+                            <h2>
+                                <strong>Technology Meets <i>Healthcare</i></strong>
+                            </h2>
+                        
                         </div>
+                        <hr/>
                         <Button onClick={() => handleGetstarted()} style={{background: "#1E2022",border: "#1E2022",divor: "#F0F5F9"}}>Get Started <i class="bi bi-check-square"></i></Button>
                     </div>   
                 </div>

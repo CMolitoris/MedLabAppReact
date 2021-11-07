@@ -30,10 +30,11 @@ const Forms = () => {
             </div>    
            
             
-        
-            {testType==="BMP" && <BMP />}
-            {testType==="CBC" && <CBC />}
-           
+            <div>
+                {testType==="BMP" && <BMP />}
+                {testType==="CBC" && <CBC />}
+            </div>
+
         </div>
      );
 }

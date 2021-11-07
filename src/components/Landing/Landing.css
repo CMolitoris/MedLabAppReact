@@ -20,23 +20,23 @@
 }
 
 .opin-attributes {
-    background-color: #C9D6DF;
+    background: rgba(201, 214, 223, 0.3);
     padding: .5rem;
     height: 100%rem;
-    width: 20rem;
-    margin-left: 45rem;
-    margin-top: 8rem;
+    width: 17rem;
+    margin-left: 47.5rem;
+    margin-top: 5.5rem;
     border-radius: .3rem;
+    
     
 }
 
 .opin-attributes-inner {
-    background-color: #F0F5F9;
     padding: .5rem;
     height: 100%rem;
     width: 100%rem;
     border-radius: .3rem;
-    margin-bottom: .5rem;
+    
     
 }
 
