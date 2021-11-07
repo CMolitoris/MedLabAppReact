@@ -1,12 +1,17 @@
 import React, { useState, useContext } from 'react';
-import { Form, Row, Col, FloatingLabel } from 'react-bootstrap';
+import { Form, FloatingLabel, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import { UserContext } from '../../UserContext';
 import Button from 'react-bootstrap/Button'
+import FormModal from './FormModal/FormModal';
 
 
 const BMP = () => {
     const user = useContext(UserContext);
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [bmpValues, setBMPValues] = useState({
         Sodium: '',
@@ -37,18 +42,39 @@ const BMP = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const URL = `https://localhost:44394/api/BMP/${user.id}`
-        try {
-            console.log(bmpValues)
-            let response = await axios.post(URL,bmpValues);
-            console.log(response.data);
-        } catch (e) {
-            console.log("Error BMP POST: ", e);
-        }
+        // const URL = `https://localhost:44394/api/BMP/${user.id}`
+        // try {
+        //     console.log(bmpValues)
+        //     let response = await axios.post(URL,bmpValues);
+        //     console.log(response.data);
+        // } catch (e) {
+        //     console.log("Error BMP POST: ", e);
+        // }
     }
     
     return (
+        
         <div className="form-scroll">
+            <Modal
+            show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title><i className="bi bi-folder-plus"></i></Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Would you like to submit another form?
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button style={{background: "#52616B",border: "#1E2022",color: "#F0F5F9"}} onClick={handleClose}>
+                        Yes <i class="bi bi-check-square"></i>
+                    </Button>
+                    <Button style={{background: "#C9D6DF",border: "#1E2022",color: "#1E2022"}} variant="primary">No <i class="bi bi-x-square"></i></Button>
+                </Modal.Footer>
+            </Modal>
+
             <Form onSubmit={handleSubmit}> 
                     <Form.Group className="mb-1" controlId='Sodium'>
                         <FloatingLabel label="Sodium">
@@ -110,7 +136,7 @@ const BMP = () => {
                             <Form.Control type='date' className="shadow" onChange={handleChange} name="DateTime" value={bmpValues.DateTime}/>
                         </FloatingLabel>
                     </Form.Group>
-                    <Button className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit</Button>
+                    <Button onClick={handleShow} className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit <i class="bi bi-lock"></i></Button>
             </Form>
         </div>
      );

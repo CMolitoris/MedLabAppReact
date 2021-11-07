@@ -11,7 +11,7 @@ const NavBar = (props) => {
         <nav className="navbar-color">
           
             <ul className='nav justify-content-center offset-lg-4'>
-            <li className='nav-item'><Link to  = '/' className='nav-link'><i className="bi bi-tropical-storm"></i> Apex Solutions</Link></li>
+            <li className='nav-item'><Link to  = '/' className='nav-link'><i className="bi bi-hurricane"></i> Apex Solutions</Link></li>
                 <li className='nav-item'><Link to  = '/' className='nav-link'><i className="bi bi-house-fill"></i> Home</Link></li>
                 {!props.user && 
                     <React.Fragment>
