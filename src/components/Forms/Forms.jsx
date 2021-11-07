@@ -12,8 +12,8 @@ const Forms = () => {
         <div className='mx-auto con-attributes-form shadow '>
             <div className=" ">
                 
-                {testType==='' && <h2 className="shadow post-title-font cent-style">Select Test</h2>}
-                {testType!=='' && <h2 className="shadow post-title-font cent-style-two">Enter {testType} Results</h2>}
+                {testType==='' && <h3 className="shadow post-title-font cent-style">Select Test</h3>}
+                {testType!=='' && <h3 className="shadow post-title-font cent-style-two">Enter {testType} Results</h3>}
             </div>    
                 
                 

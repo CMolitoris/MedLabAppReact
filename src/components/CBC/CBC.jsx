@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Row, Col, FloatingLabel } from 'react-bootstrap';
 import axios from 'axios';
 import { UserContext } from '../../UserContext';
 import Button from 'react-bootstrap/Button';
@@ -7,7 +7,7 @@ import './CBC.css';
 
 
 const CBC = () => {
-    const { user } = useContext(UserContext);
+    const user = useContext(UserContext);
     
     const [cbcValues, setCBCValues] = useState({
         Rbc: '',
@@ -23,16 +23,24 @@ const CBC = () => {
         Mon: '',
         Eos: '',
         Bas: '',
-        Plt: ''
+        Plt: '',
+        DateTime: ''
     })
 
 
     const handleChange = (event) => {
         event.persist();
-        setCBCValues(prevState => ({
-            ...prevState,
-            [event.target.name]: parseFloat(event.target.value) 
-        }))
+        if(event.target.name=='DateTime') {
+            setCBCValues(prevState => ({
+                ...prevState,
+                [event.target.name]: event.target.value
+            }))
+        } else {
+            setCBCValues(prevState => ({
+                ...prevState,
+                [event.target.name]: parseFloat(event.target.value)
+            }))
+        }
     }
 
     const handleSubmit = async (event) => {
@@ -52,86 +60,105 @@ const CBC = () => {
         <div className="form-scroll">
             <Form  onSubmit={handleSubmit}> 
                     <Form.Group className="mb-1" controlId='Rbc'>
-                        <Form.Label>Rbc:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Red Blood Cells..."/>
+                        <FloatingLabel label="Red Blood Cell">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Rbc..." name="Rbc" value={cbcValues.Rbc}/>
+                        </FloatingLabel>
                     </Form.Group>
-                
-                
+              
                     <Form.Group className="mb-1" controlId='Hb'>
-                        <Form.Label>Hb:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Hemoglobin..."/>
+                        <FloatingLabel label="Hemoglobin">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Hb..." name="Hb" value={cbcValues.Hb}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Hct'>
-                        <Form.Label>Hct:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Hematocrit..."/>
+                        <FloatingLabel label="Hematocrit">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Hct..." name="Hct" value={cbcValues.Hct}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='MCV'>
-                        <Form.Label>MCV:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Mean Corpuscular Volume..."/>
+                        <FloatingLabel label="Mean Corpuscular Volume">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="MCV..." name="MCV" value={cbcValues.MCV}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='MCH'>
-                        <Form.Label>MCH:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Mean Corpuscular Hemoglobin..."/>
+                        <FloatingLabel label="Mean Corpuscular Hemoglobin">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="MCH..." name="MCH" value={cbcValues.MCH}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='MCHC'>
-                        <Form.Label>MCHC:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Mean Corpuscular Hemoglobin Concentration..."/>
+                        <FloatingLabel label="Mean Corpuscular Hemoglobin Concentration">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="MCHC..." name="MCHC" value={cbcValues.MCHC}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='RDW'>
-                        <Form.Label>RDW:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Red Cell Distribution Width..."/>
+                        <FloatingLabel label="Red Cell Distribution Width">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="RDW..." name="RDW" value={cbcValues.RDW}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='WBC'>
-                        <Form.Label>WBC:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="White Blood Cell..."/>
+                        <FloatingLabel label="White Blood Cell">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="WBC..." name="WBC" value={cbcValues.WBC}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Neu'>
-                        <Form.Label>Neu:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Neutrophil..."/>
+                        <FloatingLabel label="Neutrophil">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Neu..." name="Neu" value={cbcValues.Neu}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Lym'>
-                        <Form.Label>Lym:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Lymphocyte..."/>
+                        <FloatingLabel label="Lymphocyte">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Lym..." name="Lym" value={cbcValues.Lym}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Mon'>
-                        <Form.Label>Mon:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Monocyte..."/>
+                        <FloatingLabel label="Monocyte">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Mon..." name="Mon" value={cbcValues.Mon}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Eos'>
-                        <Form.Label>Eos:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Eosinophil..."/>
+                        <FloatingLabel label="Eosinophil">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Eos..." name="Eos" value={cbcValues.Eos}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Bas'>
-                        <Form.Label>Bas:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Basophil..."/>
+                        <FloatingLabel label="Basophil">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Bas..." name="Bas" value={cbcValues.Bas}/>
+                        </FloatingLabel>
                     </Form.Group>
                 
                 
-                    <Form.Group className="mb-4" controlId='Plt'>
-                        <Form.Label>Plt:</Form.Label>
-                        <Form.Control className="shadow" onChange={handleChange} placeholder="Platelet..."/>
+                    <Form.Group className="mb-1" controlId='Plt'>
+                        <FloatingLabel label="Platelet">
+                            <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Plt..." name="Plt" value={cbcValues.Plt}/>
+                        </FloatingLabel>
+                    </Form.Group>
+
+                    <Form.Group className="mb-2" controlId='Date'>
+                        <FloatingLabel label="Date of Test">
+                            <Form.Control type='date' className="shadow" onChange={handleChange} name="DateTime" value={cbcValues.DateTime}/>
+                        </FloatingLabel>
                     </Form.Group>
                     <Button className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit</Button>
             </Form>
