@@ -61,6 +61,10 @@ const BMP = () => {
             console.log("Error BMP POST: ", e);
         }
     }
+
+    const routeConditions = () => {
+        window.location='http://localhost:3000/conditions';
+    }
     
     return (
         
@@ -81,7 +85,9 @@ const BMP = () => {
                     <Button style={{background: "#52616B",border: "#1E2022",color: "#F0F5F9"}} onClick={handleClose}>
                         Yes <i class="bi bi-check-square"></i>
                     </Button>
-                    <Button style={{background: "#C9D6DF",border: "#1E2022",color: "#1E2022"}} variant="primary">No <i class="bi bi-x-square"></i></Button>
+                    <Button onClick={routeConditions} style={{background: "#C9D6DF",border: "#1E2022",color: "#1E2022"}} variant="primary">
+                        No <i class="bi bi-x-square"></i>
+                    </Button>
                 </Modal.Footer>
             </Modal>
 
@@ -146,7 +152,7 @@ const BMP = () => {
                             <Form.Control type='date' className="shadow" onChange={handleChange} name="DateTime" value={bmpValues.DateTime}/>
                         </FloatingLabel>
                     </Form.Group>
-                    <Button onClick="location.href='http://localhost:3000/conditions';" className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit <i class="bi bi-lock"></i></Button>
+                    <Button className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit <i class="bi bi-lock"></i></Button>
             </Form>
         </div>
      );
