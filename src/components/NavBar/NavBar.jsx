@@ -35,6 +35,9 @@ const NavBar = (props) => {
                             <Link to='/account' className='nav-link'><i className="bi bi-person-fill"></i> Account</Link>
                         </li>
                         <li className='nav-item'>
+                            <Link to='/conditions' className='nav-link'><i className="bi bi-person-fill"></i> Conditions</Link>
+                        </li>
+                        <li className='nav-item'>
                             <a onClick = {props.logoutUser} className='nav-link'><i className="bi bi-door-open-fill"></i> Log Out</a>
                         </li>
                     </React.Fragment>

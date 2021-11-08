@@ -1,10 +1,8 @@
-#main-panel{
-    background-color: #C9D6DF;
-    color: #1E2022;
-    margin: 1rem;
-    border-radius: 2rem;
+/* #global-panel{
     
-  }
+    
+    
+} */
 
 .title{
     font-weight: 400;
@@ -16,7 +14,9 @@
     padding: 4rem;
     height: 25rem;
     width: 72rem;
-    
+    color: #1E2022;
+    margin: 1rem;
+    border-radius: 2rem;
 }
 
 .opin-attributes {

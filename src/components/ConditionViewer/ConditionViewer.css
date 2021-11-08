@@ -1,0 +1,19 @@
+.cond-panel {
+    background-color: #C9D6DF;
+    padding: 4rem;
+    height: 42rem; 
+    margin: 1rem;
+    border-radius: 2rem;  
+    justify-content: center;
+    display: flex;
+}
+
+.cond-panel-two {
+    background-color: #F0F5F9;
+    padding: 4rem;
+    height: 42rem;  
+    margin: 1rem;
+    border-radius: 2rem; 
+    justify-content: center;
+    display: flex;
+}

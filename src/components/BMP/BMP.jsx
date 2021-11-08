@@ -3,8 +3,6 @@ import { Form, FloatingLabel, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import { UserContext } from '../../UserContext';
 import Button from 'react-bootstrap/Button'
-import FormModal from './FormModal/FormModal';
-
 
 const BMP = () => {
     const user = useContext(UserContext);
@@ -42,14 +40,26 @@ const BMP = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // const URL = `https://localhost:44394/api/BMP/${user.id}`
-        // try {
-        //     console.log(bmpValues)
-        //     let response = await axios.post(URL,bmpValues);
-        //     console.log(response.data);
-        // } catch (e) {
-        //     console.log("Error BMP POST: ", e);
-        // }
+        const URL = `https://localhost:44394/api/BMP/${user.id}`
+        try {
+            console.log(bmpValues)
+            let response = await axios.post(URL,bmpValues);
+            console.log(response.data);
+            handleShow();
+            setBMPValues({
+                Sodium: '',
+                Potassium: '',
+                Glucose: '',
+                Calcium: '',
+                Chloride: '',
+                Bicarbonate: '',
+                Creatinine: '',
+                BUN: '',
+                DateTime: ''
+            })
+        } catch (e) {
+            console.log("Error BMP POST: ", e);
+        }
     }
     
     return (
@@ -136,7 +146,7 @@ const BMP = () => {
                             <Form.Control type='date' className="shadow" onChange={handleChange} name="DateTime" value={bmpValues.DateTime}/>
                         </FloatingLabel>
                     </Form.Group>
-                    <Button onClick={handleShow} className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit <i class="bi bi-lock"></i></Button>
+                    <Button onClick="location.href='http://localhost:3000/conditions';" className="submit-button" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}} type="submit">Submit <i class="bi bi-lock"></i></Button>
             </Form>
         </div>
      );

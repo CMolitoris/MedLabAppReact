@@ -21,7 +21,7 @@ const Landing = () => {
 
     return ( 
         <React.Fragment>
-                <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' id="main-panel">
+                <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' >
                     <div className="opin-attributes ">
                         <div className="opin-attributes-inner">
                             <h2>
@@ -33,7 +33,7 @@ const Landing = () => {
                         <Button onClick={() => handleGetstarted()} style={{background: "#1E2022",border: "#1E2022",divor: "#F0F5F9"}}>Get Started <i class="bi bi-check-square"></i></Button>
                     </div>   
                 </div>
-                <div className=" mx-auto con-attributes" id="main-panel">
+                <div className=" mx-auto con-attributes" >
                     <Row className=" justify-content-center text-center">
                         <Col md="auto">
                             <Card style={{ width: '18rem', height: '18rem' }}>

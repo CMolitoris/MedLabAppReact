@@ -9,6 +9,7 @@ import Landing from './components/Landing/Landing';
 import { UserContext } from './UserContext';
 
 import Forms from './components/Forms/Forms';
+import ConditionViewer from './components/ConditionViewer/ConditionViewer';
 
 class App extends Component {
     constructor(props) {
@@ -122,6 +123,7 @@ class App extends Component {
                             <Switch>    
                                 <Route path = "/" exact component={Landing}  />
                                 <Route path = "/forms"  component={Forms} />
+                                <Route path="/conditions" component={ConditionViewer} />
                                 {/* <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} /> */}
                                 
                                 {/* <Route path = "/car-details" render={props => <CarDetails {...props} postRating={this.postRating} user={this.state.loggedUser} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} ratings={this.state.ratings}/>} />
