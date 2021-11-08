@@ -1,12 +1,18 @@
 .con-attributes-form {
     background-color: #C9D6DF;
-    padding: 6rem;
+    padding: 4.5rem;
     height: 100%;
     width: 50rem;
     color: #1E2022;
     margin: 1rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     
+}
+
+.form-inner {
+    background: rgb(240, 245, 249,0.5);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
 }
 
 .post-title-font{
