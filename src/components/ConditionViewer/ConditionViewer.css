@@ -1,22 +1,32 @@
 .cond-panel {
     background-color: #C9D6DF;
-    padding: 4rem;
-    height: 100%rem; 
     margin: 1rem;
+    height: 100%rem; 
     border-radius: 2rem;  
     justify-content: center;
-    display: flex;
+    
 }
 
-.cond-panel-two {
-    background-color: #F0F5F9;
-    padding: 4rem;
-    height: 100%; 
-     
+.card-panel {
+    background-color: rgb(240, 245, 249,0.7);
     margin: 1rem;
+    height: auto; 
+    border-radius: 2rem;  
+    padding: 2rem;
+    
+   
+}
+
+.cond-panel-main {
+    background-color: #C9D6DF;
+    padding: 4rem;
+    height: 100%;   
+    margin-top: 1rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
     border-radius: 2rem; 
     justify-content: center;
-    display: flex;
+    
 }
 
 .cont-scroll {

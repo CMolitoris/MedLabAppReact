@@ -3,6 +3,7 @@ import React, { Component, useContext, useState, useEffect } from 'react';
 import { UserContext } from '../../UserContext';
 import './ConditionViewer.css';
 import { Button, Card } from 'react-bootstrap';
+import ConditionsOC from '../ConditionsOC/ConditionsOC';
 
 class ConditionViewer extends Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class ConditionViewer extends Component {
         this.state = { 
             bmpTests: [],
             cbcTests: [],
-            conditions: [],  
+            conditions: [],
+            linkedConditions: []  
         }
     }    
         getBMPTests = async () => {
@@ -40,6 +42,7 @@ class ConditionViewer extends Component {
     
         componentDidMount = () => {
             this.filterConditions()
+            this.getConditionsUser()
         }
         
     
@@ -120,25 +123,46 @@ class ConditionViewer extends Component {
             console.log(filteredConditions);
             
         }
+
+        linkCondition = async (conditionId) => {
+            let linkURL = `https://localhost:44394/api/ConditionList/create/`;
+            try {
+                await axios.post(linkURL,{
+                    UserId: this.props.user.id,
+                    ConditionId: conditionId
+                });
+            } catch (e) {
+                console.log("Error in ConditionList POST", e);
+            }
+            this.getConditionsUser();
+        }
+
+        getConditionsUser = async () => {
+            let conditionsURL = `https://localhost:44394/api/ConditionList/all/${this.props.user.id}`
+            try {
+                let response = await axios.get(conditionsURL);
+                this.setState({
+                    linkedConditions: response.data
+                })
+            } catch (e) {
+                console.log("Error in get conditionsList user", e);
+            }
+        }
     
     render() { 
         return ( 
-            <div className="container">
+            <div className="cond-panel-main">
                 <div className="row">
-                    <div className="col-3 cond-panel mt-3" >
-                            <div>
-                                <h3>Title Here</h3>
-                                
-                            </div>  
-                    </div>
-                    <div className="col cond-panel-two mt-3" >
-                        <div align="center">
-                            <h3>Title Here</h3>
-                            <div className='cont-scroll row'>
+                <ConditionsOC linkedConditions={this.state.linkedConditions} user={this.props.user}/>
+                    <div className="col mt-3" >
+                            
+                    
+                            <div align="center">
+                            <div className=' cont-scroll row'>
                                 {this.state.conditions.map((element,i) => {
                                     return (
-                                        <div className='col '>
-                                            <Card className='mb-2' key={i} style={{ width: '14.7rem' }}>
+                                        <div className='col shadow card-panel'>
+                                            <Card className='mt-2 ' key={i} style={{ width: '18rem' }}>
                                                 <Card.Img className='card-image'  src={element.image} />
                                                 <Card.Body>
                                                     <Card.Title>{element.name}</Card.Title>
@@ -148,7 +172,7 @@ class ConditionViewer extends Component {
                                                                 {element.description}
                                                             </div>
                                                         </div>
-                                                    <Button variant="primary">Go somewhere</Button>
+                                                    <Button onClick={() => this.linkCondition(element.id)} variant="dark">Link</Button>
                                                 </Card.Body>
                                             </Card>
                                         </div>
