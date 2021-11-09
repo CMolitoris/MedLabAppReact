@@ -9,16 +9,17 @@ const Forms = () => {
    const [testType, setTestType] = useState('');
 
     return ( 
-        <div className='mx-auto con-attributes-form shadow '>
+        <div className=' lab-bg'>
+        <div className='mx-auto my-auto con-attributes-form shadow '>
             <div className='form-inner'>
-                <div className=" ">
+                <div className="">
                     {testType==='' && <h3 className="shadow post-title-font cent-style">Select Test</h3>}
                     {testType!=='' && <h3 className="shadow post-title-font cent-style-two">Enter {testType} Results</h3>}
                 </div>    
                     
                     
                 <div className="">
-                    <Dropdown className=' cent-style-drop mb-3' >
+                    <Dropdown className=' cent-style-drop mb-2' >
                         <Dropdown.Toggle bsPrefix="p-0" style={{background: "#1E2022",border: "#1E2022",color: "#F0F5F9"}}>
                         <i className="bi bi-chevron-double-down"></i>
                         </Dropdown.Toggle>
@@ -36,6 +37,7 @@ const Forms = () => {
                 </div>
             </div>
 
+        </div>
         </div>
      );
 }

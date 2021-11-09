@@ -39,12 +39,12 @@
 }
 
 .background-micro {
-    background-image: url("../Landing/microscope.jpg");
+    background-image: url("../Landing/images/microred.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-position: 0;
+    background-position: bottom ;
     
    
 }

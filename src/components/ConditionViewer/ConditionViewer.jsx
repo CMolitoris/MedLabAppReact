@@ -124,14 +124,14 @@ class ConditionViewer extends Component {
     render() { 
         return ( 
             <div className="container">
-            <div className="row">
-                <div className="col-3 cond-panel mt-3" >
-                        <div>
-                            <h3>Title Here</h3>
-                            
-                        </div>  
-                </div>
-                <div className="col cond-panel-two mt-3" >
+                <div className="row">
+                    <div className="col-3 cond-panel mt-3" >
+                            <div>
+                                <h3>Title Here</h3>
+                                
+                            </div>  
+                    </div>
+                    <div className="col cond-panel-two mt-3" >
                         <div align="center">
                             <h3>Title Here</h3>
                             <div className='cont-scroll row'>
@@ -142,12 +142,12 @@ class ConditionViewer extends Component {
                                                 <Card.Img className='card-image'  src={element.image} />
                                                 <Card.Body>
                                                     <Card.Title>{element.name}</Card.Title>
-                                                    <div>
-                                                        <hr/>
-                                                        <div className='card-scroll'>
-                                                            {element.description}
+                                                        <div>
+                                                            <hr/>
+                                                            <div className='card-scroll'>
+                                                                {element.description}
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                     <Button variant="primary">Go somewhere</Button>
                                                 </Card.Body>
                                             </Card>
@@ -156,9 +156,9 @@ class ConditionViewer extends Component {
                                 )}
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
          );
     }
 }

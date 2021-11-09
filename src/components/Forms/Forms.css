@@ -1,10 +1,10 @@
 .con-attributes-form {
-    background-color: #C9D6DF;
-    padding: 4.5rem;
-    height: 100%;
+    background-color: rgb(201, 214, 223,0.3);
+    padding: 3.3rem;
+    height: auto;
     width: 50rem;
     color: #1E2022;
-    margin: 1rem;
+    
     border-radius: 1.5rem;
     
 }
@@ -75,4 +75,15 @@ background: #52616B;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 background: #1E2022;
+}
+
+.lab-bg {
+    background-image: url("../Forms/images/2797350.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 0;
+    height: 55rem;
+    padding-top: 1rem;
 }
