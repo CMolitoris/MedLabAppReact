@@ -4,6 +4,7 @@ import axios from 'axios';
 import { UserContext } from '../../UserContext';
 import Button from 'react-bootstrap/Button';
 import './CBC.css';
+import { Link } from 'react-router-dom';
 
 
 const CBC = () => {
@@ -99,9 +100,11 @@ const CBC = () => {
                     <Button style={{background: "#52616B",border: "#1E2022",color: "#F0F5F9"}} onClick={handleClose}>
                         Yes <i class="bi bi-check-square"></i>
                     </Button>
-                    <Button onClick={routeConditions} style={{background: "#C9D6DF",border: "#1E2022",color: "#1E2022"}} variant="primary">
-                        No <i class="bi bi-x-square"></i>
-                    </Button>
+                    <Link to='/conditions'>
+                        <Button style={{background: "#C9D6DF",border: "#1E2022",color: "#1E2022"}} variant="primary">
+                            No <i class="bi bi-x-square"></i>
+                        </Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
 
