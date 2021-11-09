@@ -10,3 +10,8 @@ code {
   font-size: 1rem;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
+#custom-font {
+  font-family: 'Source Serif Pro', serif;
+  /* font-family: 'Open Sans Condensed', sans-serif; */
+}

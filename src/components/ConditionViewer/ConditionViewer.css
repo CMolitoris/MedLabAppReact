@@ -11,15 +11,14 @@
     background-color: rgb(240, 245, 249,0.7);
     margin: 1rem;
     height: auto; 
-    border-radius: 2rem;  
+    border-radius: 0.3rem;  
     padding: 2rem;
     
-   
 }
 
 .cond-panel-main {
     background-color: #C9D6DF;
-    padding: 4rem;
+    padding: 3rem;
     height: 100%;   
     margin-top: 1rem;
     margin-left: 7rem;
@@ -27,6 +26,14 @@
     border-radius: 2rem; 
     justify-content: center;
     
+}
+
+.cond-panel-sec {
+    background-color: rgb(240, 245, 249,0.7);
+    margin: 1rem;
+    height: auto; 
+    border-radius: 0.3rem;  
+    padding: 2rem;
 }
 
 .cont-scroll {

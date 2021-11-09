@@ -151,14 +151,15 @@ class ConditionViewer extends Component {
     
     render() { 
         return ( 
-            <div className="cond-panel-main">
+            <div className="cond-panel-main" id="custom-font">
                 <div className="row">
                 <ConditionsOC linkedConditions={this.state.linkedConditions} user={this.props.user}/>
                     <div className="col mt-3" >
                             
                     
                             <div align="center">
-                            <div className=' cont-scroll row'>
+                            <div className=' cond-panel-sec cont-scroll row'>
+                            
                                 {this.state.conditions.map((element,i) => {
                                     return (
                                         <div className='col shadow card-panel'>
@@ -172,7 +173,7 @@ class ConditionViewer extends Component {
                                                                 {element.description}
                                                             </div>
                                                         </div>
-                                                    <Button onClick={() => this.linkCondition(element.id)} variant="dark">Link</Button>
+                                                    <Button onClick={() => this.linkCondition(element.id)} variant="dark">Link <i class="bi bi-link"></i></Button>
                                                 </Card.Body>
                                             </Card>
                                         </div>

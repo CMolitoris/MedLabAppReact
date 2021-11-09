@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Offcanvas, Button, Card } from 'react-bootstrap';
+import './ConditionsOC.css';
 
 class ConditionsOC extends Component {
     constructor(props) {
@@ -21,14 +22,14 @@ class ConditionsOC extends Component {
                 View Linked Entries
               </Button>
         
-              <Offcanvas show={this.state.show} onHide={this.handleClose}>
+              <Offcanvas  id="pane" show={this.state.show} onHide={this.handleClose}>
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>All Linked Conditions</Offcanvas.Title>
+                  <Offcanvas.Title>Linked Conditions<hr/></Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   {this.props.linkedConditions.map((element,i) => {
                       return (
-                        <Card className='mt-2 ' key={i} style={{ width: '18rem' }}>
+                        <Card className='mt-2 card shadow' key={i} style={{ width: '18rem' }}>
                        
                         <Card.Body>
                             <Card.Title>{element.condition.name}</Card.Title>
@@ -38,7 +39,7 @@ class ConditionsOC extends Component {
                                         {element.condition.description}
                                     </div>
                                 </div>
-                            <Button onClick={() => this.linkCondition(element.condition.id)} variant="dark">Link</Button>
+                            <Button onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
                         </Card.Body>
                     </Card>
                       )
