@@ -158,7 +158,7 @@ class ConditionViewer extends Component {
                             
                     
                             <div align="center">
-                            <div className=' cond-panel-sec cont-scroll row'>
+                            <div className='cond-panel-sec cont-scroll row'>
                             
                                 {this.state.conditions.map((element,i) => {
                                     return (
@@ -173,7 +173,7 @@ class ConditionViewer extends Component {
                                                                 {element.description}
                                                             </div>
                                                         </div>
-                                                    <Button onClick={() => this.linkCondition(element.id)} variant="dark">Link <i class="bi bi-link"></i></Button>
+                                                    <Button className='w-100' onClick={() => this.linkCondition(element.id)} variant="dark">Link <i class="bi bi-link"></i></Button>
                                                 </Card.Body>
                                             </Card>
                                         </div>

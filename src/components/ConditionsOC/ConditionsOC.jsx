@@ -42,7 +42,7 @@ class ConditionsOC extends Component {
                                                 {element.condition.description}
                                             </div>
                                         </div>
-                                    <Button onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
+                                    <Button className='w-100' onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
                                 </Card.Body>
                             </Card>
                             )

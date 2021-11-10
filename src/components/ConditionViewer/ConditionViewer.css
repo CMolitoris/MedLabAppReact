@@ -9,23 +9,21 @@
 
 .card-panel {
     background-color: rgb(240, 245, 249,0.7);
-    margin: 1rem;
-    height: auto; 
+    margin: 1rem;  
     border-radius: 0.3rem;  
-    padding: 2rem;
+    padding: 1rem;
     
 }
 
 .cond-panel-main {
     background-color: #C9D6DF;
-    padding: 3rem;
+    padding: 4rem;
     height: 100%;   
     margin-top: 1rem;
     margin-left: 7rem;
     margin-right: 7rem;
     border-radius: 2rem; 
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
 .cond-panel-sec {
@@ -38,7 +36,7 @@
 
 .cont-scroll {
     margin:4px, 4px;
-    padding:4px;
+    padding:8px;
     height: 34rem;
     overflow-x: hidden;
     overflow-y: auto;
@@ -47,7 +45,7 @@
 
 .card-scroll {
     margin:4px, 4px;
-    padding:4px;
+    padding:1px;
     height: 6rem;
     overflow-x: hidden;
     overflow-y: auto;

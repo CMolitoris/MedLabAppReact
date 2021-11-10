@@ -40,7 +40,7 @@
     padding-left: 15rem;
 }
 
-.cent-style-drop, .btn {
+.cent-style-drop {
     justify-content: center;
     border-radius: 2rem;  
     width: 100% !important;
