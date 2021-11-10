@@ -1,8 +1,13 @@
 #pane {
     background-color: #C9D6DF;
     font-family: 'Source Serif Pro', serif;
+    
 }
 
 .card {
     border-radius: 1rem;
+}
+
+#header-canvas {
+    background-color: #F0F5F9;
 }

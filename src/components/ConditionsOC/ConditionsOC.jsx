@@ -18,33 +18,36 @@ class ConditionsOC extends Component {
     render() { 
         return (
             <>
-              <Button variant="dark" onClick={this.handleShow}>
-                View Linked Entries
-              </Button>
-        
-              <Offcanvas  id="pane" show={this.state.show} onHide={this.handleClose}>
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Linked Conditions<hr/></Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                  {this.props.linkedConditions.map((element,i) => {
-                      return (
-                        <Card className='mt-2 card shadow' key={i} style={{ width: '18rem' }}>
-                       
-                        <Card.Body>
-                            <Card.Title>{element.condition.name}</Card.Title>
-                                <div>
-                                    <hr/>
-                                    <div className='card-scroll'>
-                                        {element.condition.description}
-                                    </div>
-                                </div>
-                            <Button onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
-                        </Card.Body>
-                    </Card>
-                      )
-                  })}
-                </Offcanvas.Body>
+                <Button variant="dark" onClick={this.handleShow}>
+                    View Linked Entries
+                </Button>
+            
+                <Offcanvas  id="pane" show={this.state.show} onHide={this.handleClose}>
+                    <div  id='header-canvas'>
+                        <Offcanvas.Header closeButton>
+                            <Offcanvas.Title >Linked Conditions</Offcanvas.Title>
+                        </Offcanvas.Header>
+                    </div>
+               
+                    <Offcanvas.Body align='center'>
+                        {this.props.linkedConditions.map((element,i) => {
+                            return (
+                                <Card className='mt-2 card shadow' key={i} style={{ width: '18rem' }}>
+                            
+                                <Card.Body>
+                                    <Card.Title>{element.condition.name}</Card.Title>
+                                        <div>
+                                            <hr/>
+                                            <div className='card-scroll'>
+                                                {element.condition.description}
+                                            </div>
+                                        </div>
+                                    <Button onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
+                                </Card.Body>
+                            </Card>
+                            )
+                        })}
+                    </Offcanvas.Body>
               </Offcanvas>
             </>
           );
