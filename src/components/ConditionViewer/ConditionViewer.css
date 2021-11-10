@@ -1,7 +1,7 @@
 .cond-panel {
     background-color: #C9D6DF;
     margin: 1rem;
-    height: 100%rem; 
+    height: 20rem; 
     border-radius: 2rem;  
     justify-content: center;
     
@@ -18,7 +18,7 @@
 .cond-panel-main {
     background-color: #C9D6DF;
     padding: 4rem;
-    height: 100%;   
+    height: 50rem;   
     margin-top: 1rem;
     margin-left: 7rem;
     margin-right: 7rem;
@@ -29,7 +29,7 @@
 .cond-panel-sec {
     background-color: rgb(240, 245, 249,0.7);
     margin: 1rem;
-    height: auto; 
+    height: 40rem; 
     border-radius: 0.3rem;  
     padding: 2rem;
 }
@@ -37,7 +37,7 @@
 .cont-scroll {
     margin:4px, 4px;
     padding:8px;
-    height: 34rem;
+    height: 40rem;
     overflow-x: hidden;
     overflow-y: auto;
     

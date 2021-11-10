@@ -157,7 +157,7 @@ class App extends Component {
                             <Switch>    
                                 <Route path = "/" exact component={Landing}  />
                                 <Route path = "/forms"  component={Forms} />
-                                <Route path='/account' component={Account}/>
+                                <Route path='/account' render={props => <Account {...props} user={this.state.loggedUser}/>}/>
                                 <Route path="/conditions" render={props => <ConditionViewer {...props} user={this.state.loggedUser} bmpTests={this.state.bmpTests} cbcTests={this.state.cbcTests} conditions={this.state.conditions}/>} />
                                 
                                 {/* <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} /> */}

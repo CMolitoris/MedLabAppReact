@@ -157,7 +157,7 @@ class ConditionViewer extends Component {
                     <div className="col mt-3" >
                             
                     
-                            <div align="center">
+                        <div align="center">
                             <div className='cond-panel-sec cont-scroll row'>
                             
                                 {this.state.conditions.map((element,i) => {
