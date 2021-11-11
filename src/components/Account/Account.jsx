@@ -26,9 +26,50 @@ class Account extends Component {
          }
     }
 
+
     componentDidMount = () => {
         this.getConditionsUser()
         this.getUserInformation()
+        this.createListeners()
+    }
+
+    createListeners = () => {
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.querySelector('.button'),
+                loader = document.querySelector('.loader'),
+                check = document.querySelector('.check');
+                
+            if(btn){
+                btn.addEventListener('click', function () {
+                  loader.classList.add('active');    
+                });
+               
+                loader.addEventListener('animationend', function() {
+                  check.classList.add('active'); 
+                });
+        
+            }
+        
+          });
+        
+          document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.querySelector('.buttona'),
+                loader = document.querySelector('.loadera'),
+                check = document.querySelector('.checka');
+                
+            if(btn){
+                btn.addEventListener('click', function () {
+                  loader.classList.add('active');    
+                });
+               
+                loader.addEventListener('animationend', function() {
+                  check.classList.add('active'); 
+                });
+        
+            }
+        
+          });
+    
     }
 
     
@@ -74,6 +115,10 @@ class Account extends Component {
         } catch (e) {
             console.log("Error in get conditionsList user: ", e);
         }
+    }
+
+    getUserTests = () => {
+
     }
 
     updateUser = async () => {
@@ -131,10 +176,11 @@ class Account extends Component {
     render() { 
         return ( 
             <div className="container mt-3">
-                <div className="row gutters">
-                    <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                        <div className="card-acc shadow card-body">
-                            <h3 className='header-side-panel'>Linked Conditions</h3>
+                <div className="row">
+                    <div className=" col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                        
+                        <div align='center' className="card-acc-one shadow ">
+                            <div className='header-side-panel pt-1'>Linked Conditions</div>
                             <div className='contain-scroll' align='center'>
                                 {this.state.linkedConditions.map((element,i) => {
                                     return (
@@ -147,7 +193,7 @@ class Account extends Component {
                                                             {element.condition.description}
                                                         </div>
                                                     </div>
-                                                <Button className='w-100' onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
+                                                <Button variant='dark' id='button-color' className='w-100' onClick={() => this.linkCondition(element.condition.id)} >Learn More <i class="bi bi-info-square"></i></Button>
                                             </Card.Body>
                                         </Card>
                                     )
@@ -155,9 +201,9 @@ class Account extends Component {
                             </div>
                         </div>
                     </div>
-                    <div align='center' className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div align='center' className=" col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                         <div className="card-acc shadow ">
-                            <div className="shadow cont-inner">
+                            <div className="mb-3 shadow cont-inner">
                                 <div className="row gutters ">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <h6 className="mb-3 text-primary">Personal Details</h6>
@@ -301,37 +347,7 @@ class Account extends Component {
  
 export default Account;
 
-document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.querySelector('.button'),
-        loader = document.querySelector('.loader'),
-        check = document.querySelector('.check');
-        
-    
-    btn.addEventListener('click', function () {
-      loader.classList.add('active');    
-    });
-   
-    loader.addEventListener('animationend', function() {
-      check.classList.add('active'); 
-    });
 
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.querySelector('.buttona'),
-        loader = document.querySelector('.loadera'),
-        check = document.querySelector('.checka');
-        
-    
-    btn.addEventListener('click', function () {
-      loader.classList.add('active');    
-    });
-   
-    loader.addEventListener('animationend', function() {
-      check.classList.add('active'); 
-    });
-
-  });
 
   
   

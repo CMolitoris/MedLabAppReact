@@ -173,7 +173,7 @@ class ConditionViewer extends Component {
                                                                 {element.description}
                                                             </div>
                                                         </div>
-                                                    <Button className='w-100' onClick={() => this.linkCondition(element.id)} variant="dark">Link <i class="bi bi-link"></i></Button>
+                                                    <Button id='button-color' className='w-100' onClick={() => this.linkCondition(element.id)} variant="dark">Link <i class="bi bi-link"></i></Button>
                                                 </Card.Body>
                                             </Card>
                                         </div>

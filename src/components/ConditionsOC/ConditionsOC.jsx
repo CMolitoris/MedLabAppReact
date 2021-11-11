@@ -18,7 +18,7 @@ class ConditionsOC extends Component {
     render() { 
         return (
             <>
-                <Button variant="dark" onClick={this.handleShow}>
+                <Button id='button-color' variant="dark" onClick={this.handleShow}>
                     View Linked Entries
                 </Button>
             
@@ -42,7 +42,7 @@ class ConditionsOC extends Component {
                                                 {element.condition.description}
                                             </div>
                                         </div>
-                                    <Button className='w-100' onClick={() => this.linkCondition(element.condition.id)} variant="dark">Learn More <i class="bi bi-info-square"></i></Button>
+                                    <Button className='w-100' onClick={() => this.linkCondition(element.condition.id)} id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
                                 </Card.Body>
                             </Card>
                             )
