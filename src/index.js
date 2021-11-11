@@ -6,6 +6,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>

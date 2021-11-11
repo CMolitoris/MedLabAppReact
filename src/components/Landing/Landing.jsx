@@ -6,6 +6,7 @@ import { UserContext } from '../../UserContext';
 
 
 
+
 const Landing = () => {
 
     const user = useContext(UserContext);
@@ -34,51 +35,106 @@ const Landing = () => {
                         <Button className='w-100' variant='dark' onClick={() => handleGetstarted()} >Get Started <i class="bi bi-check-square"></i></Button>
                     </div>   
                 </div>
-                <div className=" mx-auto con-attributes" >
-                    <Row className=" justify-content-center text-center">
+                <div  className=" mx-auto con-attributes-sec" >
+                    
+                    {/* <Row className="card-background shadow justify-content-center text-center">
+                        
                         <Col md="auto">
-                            <Card style={{ width: '18rem', height: '18rem' }}>
+                            <Card className='shadow' style={{ width: '18rem', height: '18rem' }}>
                                 <Card.Img variant="top" />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>
+                                        Gain Awareness
+                                    </Card.Title>
                                     <Card.Text>
                                     <hr/>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <p>
+                                        <i>"Doctors are suprisingly bad at reading lab results. It's putting us all at risk."</i>
+                                    </p>
+                                    <footer className="blockquote-footer pt-4 mt-4 border-top">
+                                        Professor of Epidemiology, Daniel Morgan 
+                                        <cite> Washington Post</cite>
+                                    </footer>
                                     </Card.Text>
                                     
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col md="auto">
-                            <Card style={{ width: '18rem', height: '18rem' }}>
+                            <Card className='shadow' style={{ width: '18rem', height: '18rem' }}>
                                 <Card.Img variant="top" />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>Stop Waiting</Card.Title>
                                     <Card.Text>
                                     <hr/>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <p>
+                                        Tired of waiting weeks to hear about your lab test findings? We are too.
+                                    </p>
+                                    <footer className="blockquote-footer pt-4 mt-4 border-top">
+                                        Choose Us!
+                                        
+                                    </footer>
                                     </Card.Text>
                                     
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col md="auto">
-                            <Card style={{ width: '18rem', height: '18rem' }}>
+                            <Card className='shadow' style={{ width: '18rem', height: '18rem' }}>
                                 <Card.Img variant="top" />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>Leave the math to us</Card.Title>
                                     <Card.Text>
                                     <hr/>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                        <p>
+                                            Don't know what each word, phrase or number means? 
+                                        </p>
+                                        <footer className="blockquote-footer pt-4 mt-4 border-top">
+                                            That's okay, we do!
+                                        </footer>
                                     </Card.Text>
                                     
                                 </Card.Body>
                             </Card>
                         </Col>
-                    </Row>
+                    </Row> */}
+                    
+        <div id='Workflow' className="">
+            <div className="row">
+                <div className="col-md-8 offset-md-2">
+                    <div className="section-title">
+                        <h2 className="text-center">How It Works?</h2>
+                        <p className="text-center"><i>We are founded on the principle of empowering those seeking information about their health. </i></p>
+                    </div>
+                    <hr className="border-white mb-4 mt-4"/>
+                </div>
+            </div>
+            
+            <div className="row">
+                <div className="col-md-4">
+                    <div className="work-process">
+                        <i className="fas fa-file-alt"></i>
+                        <h3><a href="#">Enter Your Lab Results</a></h3>
+                        <p>Our interface allows for friendly forms. All you need to do is enter what you see.</p>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div className="work-process">
+                        <i className="fas fa-envelope-open-text"></i>
+                        <h3><a href="#">See Affiliated Conditions</a></h3>
+                        <p>After entering your labs, you'll be able to confidently see what you could be facing.</p>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div className="work-process">
+                        <i className="fas fa-copy"></i>
+                        <h3><a href="#">Track Your Labs</a></h3>
+                        <p>Store and track your results with our easy-to-navigate interface.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
                 </div>
             </React.Fragment>
      );
