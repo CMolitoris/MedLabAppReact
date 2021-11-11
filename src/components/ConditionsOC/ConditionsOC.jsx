@@ -23,7 +23,7 @@ class ConditionsOC extends Component {
                 </Button>
             
                 <Offcanvas  id="pane" show={this.state.show} onHide={this.handleClose}>
-                    <div  id='header-canvas'>
+                    <div   id='header-canvas'>
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title >Linked Conditions</Offcanvas.Title>
                         </Offcanvas.Header>

@@ -5,6 +5,7 @@ import { UserContext } from '../../UserContext';
 
 
 
+
 const Landing = () => {
 
     const user = useContext(UserContext);
@@ -20,6 +21,7 @@ const Landing = () => {
 
     return ( 
         <React.Fragment>
+            
                 <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' >
                     <div className="opin-attributes ">
                         <div align='center' className="opin-attributes-inner">
