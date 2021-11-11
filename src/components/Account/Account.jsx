@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Accordion } from 'react-bootstrap';
 import axios from 'axios';
 import './Account.css';
 import './Account.scss';
+import moment from 'moment';
 
 class Account extends Component {
     constructor(props) {
+        
         super(props);
         this.state = { 
             linkedConditions: [],
+            BMPs: [],
+            CBCs: [],
             firstname: '',
             lastname: '',
             phonenumber: '',
@@ -23,7 +27,8 @@ class Account extends Component {
             height: 0,
             weight: 0
 
-         }
+        }
+       
     }
 
 
@@ -31,6 +36,7 @@ class Account extends Component {
         this.getConditionsUser()
         this.getUserInformation()
         this.createListeners()
+        this.getUserTests()
     }
 
     createListeners = () => {
@@ -40,6 +46,7 @@ class Account extends Component {
                 check = document.querySelector('.check');
                 
             if(btn){
+                console.log("Adding listeners")
                 btn.addEventListener('click', function () {
                   loader.classList.add('active');    
                 });
@@ -118,7 +125,32 @@ class Account extends Component {
     }
 
     getUserTests = () => {
+        this.getBMPs()
+        this.getCBCs()
+    }
 
+    getBMPs = async () => {
+        let URL =  `https://localhost:44394/api/BMPList/all/${this.props.user.id}`;
+        try {
+            let response = await axios.get(URL);
+            this.setState({
+                BMPs: response.data
+            })
+        } catch(e) {
+            console.log("Account.jsx, Error in getBMPs: ",e)
+        }
+    }
+
+    getCBCs = async () => {
+        let URL =  `https://localhost:44394/api/CBCList/all/${this.props.user.id}`;
+        try {
+            let response = await axios.get(URL);
+            this.setState({
+                CBCs: response.data
+            })
+        } catch(e) {
+            console.log("Account.jsx, Error in getCBCs: ",e)
+        }
     }
 
     updateUser = async () => {
@@ -167,42 +199,89 @@ class Account extends Component {
             this.setState({
                 [event.target.name]: event.target.value
             })
-        }
+        }  
+    }
 
-        
+    deleteBMP = async (testId) => {
+        let URL = `https://localhost:44394/api/BMP/delete/${testId}/${this.props.user.id}`;
+        try {
+            await axios.delete(URL)
+        } catch(e) {
+            console.log("Account.jsx, Error in delete BMP: ",e)
+        } finally {
+            this.getUserTests()
+        }
+    }
+
+    deleteCBC = async (testId) => {
+        let URL = `https://localhost:44394/api/CBC/delete/${testId}/${this.props.user.id}`;
+        try {
+            await axios.delete(URL)
+        } catch(e) {
+            console.log("Account.jsx, Error in delete CBC: ",e)
+        } finally {
+            this.getUserTests()
+        }
     }
 
 
     render() { 
+        moment.locale('en');
+        
         return ( 
+            
             <div className="container mt-3">
                 <div className="row">
                     <div className=" col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                         
                         <div align='center' className="card-acc-one shadow ">
-                            <div className='header-side-panel pt-1'>Linked Conditions</div>
+                            <div className='header-side-panel pt-1'>
+                                Previous Tests
+                            </div>
                             <div className='contain-scroll' align='center'>
-                                {this.state.linkedConditions.map((element,i) => {
-                                    return (
-                                        <Card className='mt-2 card shadow' key={i} style={{ width: '90%' }}>
-                                            <Card.Body>
-                                                <Card.Title>{element.condition.name}</Card.Title>
-                                                    <div>
-                                                        <hr/>
-                                                        <div className='card-scroll'>
-                                                            {element.condition.description}
-                                                        </div>
-                                                    </div>
-                                                <Button variant='dark' id='button-color' className='w-100' onClick={() => this.linkCondition(element.condition.id)} >Learn More <i class="bi bi-info-square"></i></Button>
-                                            </Card.Body>
-                                        </Card>
-                                    )
-                                })}
+                                
+                                <Accordion >
+                                    <Accordion.Item eventKey="0">
+                                        <Accordion.Header>BMP</Accordion.Header>
+                                            {this.state.BMPs.map((element,i) => {
+                                                return (
+                                                    <Accordion.Body>
+                                                            <Card className='mt-2 card shadow' key={i} style={{ width: '90%' }}>
+                                                                <Card.Body>
+                                                                    <Card.Title>{moment(element.bmp.dateTime).format('LLL')}</Card.Title>                                                   
+                                                                        <hr/>                                               
+                                                                    <Button variant='dark' id='button-color' className='w-100' onClick={this.deleteBMP.bind(this,element.bmp.id)} >Delete Record <i class="bi bi-folder-minus"></i></Button>
+                                                                </Card.Body>
+                                                            </Card>
+                                                    </Accordion.Body>  
+                                                )
+                                            })}
+                                        
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="1">
+                                            <Accordion.Header>CBC</Accordion.Header>
+                                            <Accordion.Body>
+                                                {this.state.CBCs.map((element,i) => {
+                                                    return (
+                                                        
+                                                        <Card className='mt-2 card shadow' key={i} style={{ width: '100%' }}>
+                                                            <Card.Body>
+                                                                <Card.Title>{moment(element.cbc.dateTime).format('LLL')}</Card.Title>
+                                                                <hr/>
+                                                                <Button variant='dark' id='button-color' className='w-100' onClick={this.deleteCBC.bind(this,element.cbc.id)} >Delete Record <i class="bi bi-folder-minus"></i></Button>
+                                                            </Card.Body>
+                                                        </Card>
+                                                            
+                                                    )
+                                                })}
+                                            </Accordion.Body> 
+                                        </Accordion.Item>
+                                </Accordion>
                             </div>
                         </div>
                     </div>
                     <div align='center' className=" col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                        <div className="card-acc shadow ">
+                        <div className="card-acc contain-scroll-two shadow ">
                             <div className="mb-3 shadow cont-inner">
                                 <div className="row gutters ">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
