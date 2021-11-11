@@ -8,7 +8,6 @@ import { UserContext } from '../../UserContext';
 const Landing = () => {
 
     const user = useContext(UserContext);
-    console.log(user)
 
     const handleGetstarted = () => {
         
@@ -23,14 +22,14 @@ const Landing = () => {
         <React.Fragment>
                 <div className=' mx-auto  background-micro con-attributes overflow-hidden shadow ' >
                     <div className="opin-attributes ">
-                        <div className="opin-attributes-inner">
+                        <div align='center' className="opin-attributes-inner">
                             <h2>
                                 <strong>Technology Meets <i>Healthcare</i></strong>
                             </h2>
                         
                         </div>
                         <hr/>
-                        <Button onClick={() => handleGetstarted()} style={{background: "#1E2022",border: "#1E2022",divor: "#F0F5F9"}}>Get Started <i class="bi bi-check-square"></i></Button>
+                        <Button className='w-100' variant='dark' onClick={() => handleGetstarted()} >Get Started <i class="bi bi-check-square"></i></Button>
                     </div>   
                 </div>
                 <div className=" mx-auto con-attributes" >

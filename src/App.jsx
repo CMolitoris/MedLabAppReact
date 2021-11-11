@@ -57,13 +57,16 @@ class App extends Component {
     registerURL = "https://localhost:44394/api/authentication/"
     loginURL = "https://localhost:44394/api/authentication/login"
     updateAddressURL = "https://localhost:44394/api/users/complete/"
+    postProfileURL = "https://localhost:44394/api/profile/"
     
     componentWillMount() {
         let id = this.getToken();
-        this.getUserDetails(id);
-        this.getBMPTests(id)
-        this.getCBCTests(id)
-        this.getAllConditions()
+        if(this.state.loggedUser!==null){
+            this.getUserDetails(id);
+            this.getBMPTests(id)
+            this.getCBCTests(id)
+            this.getAllConditions()
+        }
     }
    
     getToken = () => {
@@ -80,12 +83,27 @@ class App extends Component {
         
     }
 
-    registerUser = async (userToRegister) => {
+    registerUser = async (userToRegister,demographics) => {
+        console.log(userToRegister)
         try {
-          await axios.post(this.registerURL, userToRegister);
-          this.loginUser({'username': userToRegister.username, 'password': userToRegister.password})
+            let response = await axios.post(this.registerURL, userToRegister);
+            console.log(response)
+            this.loginUser({'username': userToRegister.username, 'password': userToRegister.password})
+                .then( res => {
+
+                    let userId = this.state.loggedUser.id
+                    let demoToPass = {
+                        ...demographics,
+                        userId: userId
+                    }
+                    console.log(demoToPass)
+                    axios.post(this.postProfileURL, demoToPass)
+                })
+
+            
+
         } catch(err){
-          console.log("🚀 ~ file: App.jsx ~ line 40 ~ App ~ registerUser= ~ err", err)
+          console.log("🚀 ~ file: App.jsx ~ line 94 ~ App ~ registerUser= ~ err", err)
         }
       }
   

@@ -21,9 +21,7 @@ const NavBar = (props) => {
                         <li className='nav-item'>
                             <a className='nav-link' onClick = {props.toggleRegisterModal}><i className="bi bi-shield-lock-fill"></i>  Register</a>
                         </li>
-                        <li className='nav-item'>
-                            <Link to='/products' className='nav-link navbar-text'><i className="bi bi-pen-fill"></i>  Labs </Link>
-                        </li>
+                        
                     </React.Fragment>
                 }
                 {props.user && 

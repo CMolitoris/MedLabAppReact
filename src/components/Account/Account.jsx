@@ -7,7 +7,21 @@ class Account extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            linkedConditions: []
+            linkedConditions: [],
+            firstname: '',
+            lastname: '',
+            phonenumber: '',
+            email: '',
+            streetaddress: '',
+            city: '',
+            state: '',
+            zip: '',
+
+            age: 0,
+            gender: '',
+            height: 0,
+            weight: 0
+
          }
     }
 
@@ -23,8 +37,58 @@ class Account extends Component {
                 linkedConditions: response.data
             })
         } catch (e) {
-            console.log("Error in get conditionsList user", e);
+            console.log("Error in get conditionsList user: ", e);
         }
+    }
+
+    updateUser = async () => {
+        let URL = `https://localhost:44394/api/users/edit/${this.props.user.id}`;
+        try {
+            let response = await axios.put(URL,{
+                firstname: this.state.firstname,
+                lastname: this.state.lastname,
+                phonenumber: this.state.phonenumber,
+                email: this.state.email,
+                streetaddress: this.state.streetaddress,
+                city: this.state.city,
+                state: this.state.state,
+                zip: this.state.zip
+            })
+        } catch (e) {
+            console.log("Error in update profile: ", e);
+        }
+    }
+
+    updateProfile = async () => {
+        let URL = `https://localhost:44394/api/profile/edit/${this.props.user.id}`;
+        try {
+            let response = await axios.put(URL,{
+                age: this.state.age,
+                gender: this.state.gender,
+                height: this.state.height,
+                weight: this.state.weight
+            })
+        } catch (e) {
+            console.log("Error in update profile: ", e);
+        }
+    }
+
+    onChange = (event) => {
+        if(event.target.name==='height' || event.target.name==='weight'){
+            this.setState({
+                [event.target.name]: parseFloat(event.target.value) 
+            })
+        } else if(event.target.name==='age'){
+            this.setState({
+                [event.target.name]: parseInt(event.target.value) 
+            })
+        } else {
+            this.setState({
+                [event.target.name]: event.target.value
+            })
+        }
+
+        
     }
 
 
@@ -35,10 +99,10 @@ class Account extends Component {
                     <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                         <div className="card-acc shadow card-body">
                             <h3 className='header-side-panel'>Linked Conditions</h3>
-                            <div className='contain-scroll'>
+                            <div className='contain-scroll' align='center'>
                                 {this.state.linkedConditions.map((element,i) => {
                                     return (
-                                        <Card className='mt-2 card shadow' key={i} style={{ width: '100%' }}>
+                                        <Card className='mt-2 card shadow' key={i} style={{ width: '90%' }}>
                                             <Card.Body>
                                                 <Card.Title>{element.condition.name}</Card.Title>
                                                     <div>
@@ -55,7 +119,7 @@ class Account extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div align='center' className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                         <div className="card-acc shadow ">
                             <div className="shadow cont-inner">
                                 <div className="row gutters ">
@@ -63,27 +127,27 @@ class Account extends Component {
                                         <h6 className="mb-3 text-primary">Personal Details</h6>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div className="form-group">
-                                            <label for="fullName">Full Name</label>
-                                            <input type="text" className="form-control form-control-acc" id="fullName" placeholder="Enter full name"/>
+                                        <div className="form-group ">
+                                            <label for="firstname">First Name</label>
+                                            <input type="text" className="shadow form-control form-control-acc" id="firstname" placeholder="Enter First Name" name='firstname' value={this.state.firstname}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="eMail">Email</label>
-                                            <input type="email" className="form-control form-control-acc" id="eMail" placeholder="Enter email ID"/>
+                                            <label for="lastname">Last Name</label>
+                                            <input type="text" className="shadow form-control form-control-acc" id="lastname" placeholder="Enter Last Name" name='lastname' value={this.state.lastname}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" className="form-control form-control-acc" id="phone" placeholder="Enter phone number"/>
+                                            <label for="phonenumber">Phone</label>
+                                            <input type="text" className="form-control form-control-acc shadow" id="phonenumber" placeholder="Enter phone number" name='phonenumber' value={this.state.phonenumber}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="website">Website URL</label>
-                                            <input type="url" className="form-control form-control-acc" id="website" placeholder="Website url"/>
+                                            <label for="email">Email</label>
+                                            <input type="url" className="form-control form-control-acc shadow" id="email" placeholder="Email" name='email' value={this.state.email}/>
                                         </div>
                                     </div>
                                 </div>
@@ -93,33 +157,33 @@ class Account extends Component {
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="Street">Street</label>
-                                            <input type="name" className="form-control form-control-acc" id="Street" placeholder="Enter Street"/>
+                                            <label for="streetaddress">Street</label>
+                                            <input type="name" className="form-control form-control-acc shadow" id="streetaddress" placeholder="Enter Street" name='streetaddress' value={this.state.streetaddress}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="ciTy">City</label>
-                                            <input type="name" className="form-control form-control-acc" id="ciTy" placeholder="Enter City"/>
+                                            <label for="city">City</label>
+                                            <input type="name" className="form-control form-control-acc shadow" id="city" placeholder="Enter City" name='city' value={this.state.city}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="sTate">State</label>
-                                            <input type="text" className="form-control form-control-acc" id="sTate" placeholder="Enter State"/>
+                                            <label for="state">State</label>
+                                            <input type="text" className="form-control form-control-acc shadow" id="state" placeholder="Enter State" name='state' value={this.state.state}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="zIp">Zip Code</label>
-                                            <input type="text" className="form-control form-control-acc" id="zIp" placeholder="Zip Code"/>
+                                            <label for="zip">Zip Code</label>
+                                            <input type="text" className="form-control form-control-acc shadow" id="zip" placeholder="Zip Code" name='zip' value={this.state.zip}/>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row gutters">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div className='pt-3' align='center'>
-                                            <Button variant='dark' type="button" id="submit" name="submit" className="btn btn-primary bg-dark">Update Details</Button>
+                                            <Button onClick={this.updateUser} variant='dark' type="button" id="submit" name="submit" className="btn btn-primary bg-dark">Update Details</Button>
                                         </div>
                                     </div>
                                 </div>
@@ -133,46 +197,36 @@ class Account extends Component {
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="fullName">Full Name</label>
-                                            <input type="text" className="form-control form-control-acc" id="fullName" placeholder="Enter full name"/>
+                                            <label for="age">Age</label>
+                                            <input type="text" className="form-control form-control-acc shadow" id="age" name='age' value={this.state.age}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="eMail">Email</label>
-                                            <input type="email" className="form-control form-control-acc" id="eMail" placeholder="Enter email ID"/>
+                                            <label for="gender">Gender</label>
+                                            <input type="text" className="form-control form-control-acc shadow" id="gender" name='gender' value={this.state.gender}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" className="form-control form-control-acc" id="phone" placeholder="Enter phone number"/>
+                                            <label for="height">Height</label>
+                                            <input type="text" className="form-control form-control-acc shadow" id="height" name='height' value={this.state.height}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
-                                            <label for="website">Website URL</label>
-                                            <input type="url" className="form-control form-control-acc" id="website" placeholder="Website url"/>
+                                            <label for="weight">Weight</label>
+                                            <input type="url" className="form-control form-control-acc shadow" id="weight" name='weight' value={this.state.weight}/>
                                         </div>
                                     </div>
-                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div className="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" className="form-control form-control-acc" id="phone" placeholder="Enter phone number"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div className="form-group">
-                                            <label for="website">Website URL</label>
-                                            <input type="url" className="form-control form-control-acc" id="website" placeholder="Website url"/>
-                                        </div>
-                                    </div>
+                                   
+                                   
                                 </div>
                                 
                                 <div className="row gutters">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div align='center' className="pt-3">                                           
-                                            <Button variant='dark' type="button" id="submit" name="submit" className="btn btn-primary">Update Demographics</Button>
+                                            <Button onClick={this.updateProfile} variant='dark' type="button" id="submit" name="submit" className="btn btn-primary">Update Demographics</Button>
                                         </div>
                                     </div>
                                 </div>
