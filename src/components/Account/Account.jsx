@@ -4,6 +4,9 @@ import axios from 'axios';
 import './Account.css';
 import './Account.scss';
 import moment from 'moment';
+import GoogleMaps from '../GoogleMaps/GoogleMaps';
+
+
 
 class Account extends Component {
     constructor(props) {
@@ -25,7 +28,7 @@ class Account extends Component {
             age: 0,
             gender: '',
             height: 0,
-            weight: 0
+            weight: 0,
 
         }
        
@@ -37,6 +40,7 @@ class Account extends Component {
         this.getUserInformation()
         this.createListeners()
         this.getUserTests()
+        
     }
 
     createListeners = () => {
@@ -46,7 +50,7 @@ class Account extends Component {
                 check = document.querySelector('.check');
                 
             if(btn){
-                console.log("Adding listeners")
+                
                 btn.addEventListener('click', function () {
                   loader.classList.add('active');    
                 });
@@ -281,7 +285,13 @@ class Account extends Component {
                         </div>
                     </div>
                     <div align='center' className=" col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                        <div className="card-acc contain-scroll-two shadow ">
+                        
+                        <div className="card-acc contain-scroll-two shadow ">    
+                            <div className="mb-3 shadow cont-inner">
+                            <h6 className="mb-3 text-primary">Nearby Treatment Facilities</h6>
+                                <GoogleMaps streetaddress={this.state.streetaddress}/>   
+                               
+                            </div>
                             <div className="mb-3 shadow cont-inner">
                                 <div className="row  ">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
