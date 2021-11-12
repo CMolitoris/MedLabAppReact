@@ -134,5 +134,6 @@
 }
 /*-- Workflow Section CSS --*/
 
-
-
+#font-thicken {
+    font-weight: bold;
+}

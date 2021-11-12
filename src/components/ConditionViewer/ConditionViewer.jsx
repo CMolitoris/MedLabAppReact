@@ -4,6 +4,7 @@ import { UserContext } from '../../UserContext';
 import './ConditionViewer.css';
 import { Button, Card } from 'react-bootstrap';
 import ConditionsOC from '../ConditionsOC/ConditionsOC';
+import FlaggedOC from '../FlaggedOC/FlaggedOC.jsx';
 
 class ConditionViewer extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class ConditionViewer extends Component {
             bmpTests: [],
             cbcTests: [],
             conditions: [],
-            linkedConditions: []  
+            linkedConditions: [],
+            flaggedValues: []  
         }
     }    
         getBMPTests = async () => {
@@ -58,31 +60,67 @@ class ConditionViewer extends Component {
        
             console.log(this.state.bmpTests)
             let newTestIds = [];
-    
+            let newFlags = [];
+
             for(let i=0;i<this.state.bmpTests.length;i++){
                 if(this.state.bmpTests[i].bmp.sodium<135){
                     if (newTestIds.includes(2) === false) {
                         newTestIds.push(2);
+                        newFlags.push({
+                            analyte:'Sodium',
+                            value: String(this.state.bmpTests[i].bmp.sodium),
+                            high: false,
+                            dateTime: this.state.bmpTests[i].bmp.dateTime,
+                            type: 'BMP'
+                        })
                     }
                 }
                 if(this.state.bmpTests[i].bmp.potassium<3.5){
                     if (newTestIds.includes(1) === false) {
                         newTestIds.push(1);
+                        newFlags.push({
+                            analyte:'Potassium',
+                            value: String(this.state.bmpTests[i].bmp.potassium),
+                            high: false,
+                            dateTime: this.state.bmpTests[i].bmp.dateTime,
+                            type: 'BMP'
+                        })
                     }
                 }
                 if(this.state.bmpTests[i].bmp.glucose>100){
                     if (newTestIds.includes(3) === false) {
                         newTestIds.push(3);
+                        newFlags.push({
+                            analyte:'Glucose',
+                            value: String(this.state.bmpTests[i].bmp.glucose),
+                            high: true,
+                            dateTime: this.state.bmpTests[i].bmp.dateTime,
+                            type: 'BMP'
+                        })
                     }
                 }
                 if(this.state.bmpTests[i].bmp.creatinine>1.2){
                     if (newTestIds.includes(4) === false) {
                         newTestIds.push(4);
+                        newFlags.push({
+                            analyte:'Creatinine',
+                            value: String(this.state.bmpTests[i].bmp.creatinine),
+                            high: true,
+                            dateTime: this.state.bmpTests[i].bmp.dateTime,
+                            type: 'BMP'
+                        })
                     }
                 }
                 if(this.state.bmpTests[i].bmp.bicarbonate>29){
                     if (newTestIds.includes(5) === false) {
                         newTestIds.push(5);
+                        newFlags.push({
+                            analyte:'Bicarbonate',
+                            value: String(this.state.bmpTests[i].bmp.bicarbonate),
+                            high: true,
+                            dateTime: this.state.bmpTests[i].bmp.dateTime,
+                            type: 'BMP'
+                        })
                     }
                 }
             }
@@ -90,37 +128,102 @@ class ConditionViewer extends Component {
             this.state.cbcTests.forEach((element) => {
                 
                 console.log(element)
-                if(element.cbc.lym > 44 || element.cbc.wbc > 10.16 || element.cbc.neu > 70){
+                if(element.cbc.lym > 44){
                     if (newTestIds.includes(6) === false) {
                         newTestIds.push(6);
+                        newFlags.push({
+                            analyte:'Neutrophils',
+                            value: String(element.cbc.lym),
+                            high: true,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
+                    }
+                }
+                if(element.cbc.wbc > 10.16){
+                    if (newTestIds.includes(6) === false) {
+                        newTestIds.push(6);
+                        newFlags.push({
+                            analyte:'Neutrophils',
+                            value: String(element.cbc.wbc),
+                            high: true,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
+                    }
+                }
+                if(element.cbc.neu > 70){
+                    if (newTestIds.includes(6) === false) {
+                        newTestIds.push(6);
+                        newFlags.push({
+                            analyte:'Neutrophils',
+                            value: String(element.cbc.neu),
+                            high: true,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
                     }
                 }
                 if(element.cbc.mon > 11){
                     if (newTestIds.includes(7) === false) {
                         newTestIds.push(7);
+                        newFlags.push({
+                            analyte:'Monocytes',
+                            value: String(element.cbc.mon),
+                            high: true,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
                     }
                 }
-                if(element.cbc.rbc < 4.3 || element.cbc.RDW > 15.8) {
+                if(element.cbc.rbc < 4.3) {
                     if (newTestIds.includes(8) === false) {
                         newTestIds.push(8);
+                        newFlags.push({
+                            analyte:'Red Cell Distribution Width',
+                            value: String(element.cbc.rbc),
+                            high: false,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
+                    }
+                }
+                if(element.cbc.RDW > 15.8) {
+                    if (newTestIds.includes(8) === false) {
+                        newTestIds.push(8);
+                        newFlags.push({
+                            analyte:'Red Cell Distribution Width',
+                            value: String(element.cbc.RDW),
+                            high: true,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
                     }
                 }
                 if(element.cbc.plt < 150){ 
                     if (newTestIds.includes(9) === false) {
                         newTestIds.push(9);
+                        newFlags.push({
+                            analyte:'Platelets',
+                            value: String(element.cbc.plt),
+                            high: false,
+                            dateTime: element.cbc.dateTime,
+                            type: 'CBC'
+                        })
                     }
                 }
             });
     
-            console.log(newTestIds);
+            
     
             let filteredConditions = this.state.conditions.filter((element) => {
                 return newTestIds.includes(element.id);
             })
             this.setState({
-                conditions:filteredConditions
+                conditions:filteredConditions,
+                flaggedValues: newFlags
             });
-            console.log(filteredConditions);
+            console.log(newFlags);
             
         }
 
@@ -153,17 +256,16 @@ class ConditionViewer extends Component {
         return ( 
             <div className="cond-panel-main" id="custom-font">
                 <div className="row">
-                <ConditionsOC linkedConditions={this.state.linkedConditions} user={this.props.user}/>
-                    <div className="col mt-3" >
-                            
                     
+                <ConditionsOC linkedConditions={this.state.linkedConditions} user={this.props.user}/>
+                <FlaggedOC flaggedValues={this.state.flaggedValues}/>
+                    <div className="col mt-3" >                 
                         <div align="center">
-                            <div className='cond-panel-sec cont-scroll row'>
-                            
+                            <div className='cond-panel-sec cont-scroll row'>                            
                                 {this.state.conditions.map((element,i) => {
                                     return (
                                         <div className='col shadow card-panel'>
-                                            <Card className='mt-2 ' key={i} style={{ width: '18rem' }}>
+                                            <Card className='mt-2 ' key={i} style={{ width: '20rem' }}>
                                                 <Card.Img className='card-image'  src={element.image} />
                                                 <Card.Body>
                                                     <Card.Title>{element.name}</Card.Title>

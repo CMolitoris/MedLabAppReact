@@ -103,7 +103,7 @@ const Landing = () => {
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     <div className="section-title">
-                        <h2 className="text-center">How It Works?</h2>
+                        <h2 id='font-thicken' className="text-center">We Make It Simple.</h2>
                         <p className="text-center"><i>We are founded on the principle of empowering those seeking information about their health. </i></p>
                     </div>
                     <hr className="border-white mb-4 mt-4"/>
@@ -128,7 +128,7 @@ const Landing = () => {
                 <div className="col-md-4">
                     <div className="work-process">
                         <i className="fas fa-copy"></i>
-                        <h3><a href="#">Track Your Labs</a></h3>
+                        <h3><a href="#">Track Your Forms</a></h3>
                         <p>Store and track your results with our easy-to-navigate interface.</p>
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Offcanvas, Button, Card } from 'react-bootstrap';
-import './ConditionsOC.css';
+import './FlaggedOC.css';
+import moment from 'moment';
 
-class ConditionsOC extends Component {
+class FlaggedOC extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -16,33 +17,39 @@ class ConditionsOC extends Component {
     handleShow = () => this.setState({show: true});
 
     render() { 
+        moment.locale('en');
+
         return (
             <>
-                <Button className='mb-1' id='button-color' variant="dark" onClick={this.handleShow}>
-                    View Linked Conditions
+                <Button id='button-color' variant="dark" onClick={this.handleShow}>
+                    View Flagged Results
                 </Button>
             
-                <Offcanvas  id="pane" show={this.state.show} onHide={this.handleClose}>
+                <Offcanvas placement={'end'}  id="pane" show={this.state.show} onHide={this.handleClose}>
                     <div   id='header-canvas'>
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title >Linked Conditions</Offcanvas.Title>
+                            <Offcanvas.Title >Flagged Results</Offcanvas.Title>
                         </Offcanvas.Header>
                     </div>
                
                     <Offcanvas.Body align='center'>
-                        {this.props.linkedConditions.map((element,i) => {
+                        {this.props.flaggedValues.map((element,i) => {
                             return (
                                 <Card className='mt-2 card shadow' key={i} style={{ width: '18rem' }}>
                             
                                 <Card.Body>
-                                    <Card.Title>{element.condition.name}</Card.Title>
-                                        <div>
-                                            <hr/>
-                                            <div className='card-scroll'>
-                                                {element.condition.description}
-                                            </div>
+                                    <Card.Title>
+                                        {element.type}<br/>
+                                        
+                                    </Card.Title>
+                                    <div>
+                                        <hr/>
+                                        <div >
+                                            <span className='flagged-text'>{element.analyte}: {element.value} {element.high===true? <i class="bi bi-arrow-up-short"></i>:<i class="bi bi-arrow-down-short"></i>}</span><br/>       
+                                            <span>Date: {moment(element.dateTime).format('LLL')}</span>
                                         </div>
-                                    <Button className='w-100' onClick={() => this.linkCondition(element.condition.id)} id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
+                                    </div>
+                                    <Button className='w-100 mt-3' onClick={() => this.linkCondition(element.condition.id)} id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
                                 </Card.Body>
                             </Card>
                             )
@@ -54,7 +61,7 @@ class ConditionsOC extends Component {
     }
 }
  
-export default ConditionsOC;
+export default FlaggedOC;
 
 // const ConditionsOC = () => {
 //     const [show, setShow] = useState(false);

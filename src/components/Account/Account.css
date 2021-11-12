@@ -33,7 +33,7 @@
     }
     .contain-scroll {
         margin:4px, 4px;
-        padding:6px;
+        padding:8px;
         height: 100%;
         overflow-x: hidden;
         overflow-y: auto;

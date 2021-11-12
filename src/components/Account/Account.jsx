@@ -283,9 +283,9 @@ class Account extends Component {
                     <div align='center' className=" col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                         <div className="card-acc contain-scroll-two shadow ">
                             <div className="mb-3 shadow cont-inner">
-                                <div className="row gutters ">
+                                <div className="row  ">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <h6 className="mb-3 text-primary">Personal Details</h6>
+                                        <h6 className=" text-primary">Personal Details</h6>
                                         
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
