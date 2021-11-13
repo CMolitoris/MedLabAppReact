@@ -1,5 +1,9 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { useLocation, useParams } from 'react-router';
+import { Image } from 'react-bootstrap';
+import './LearnMore.css'
+
 
 class LearnMore extends Component {
     constructor(props) {
@@ -15,11 +19,16 @@ class LearnMore extends Component {
 
     getCondition = async () => {
         console.log(this.props)
-        let URL = `https://localhost:44394/api/Condition/${this.props.condition.id}`
-        let response = await axios.get(URL)   
-        this.setState({
-            condition: response.data
-        })
+        try {
+            let URL = `https://localhost:44394/api/Condition/1`
+            let response = await axios.get(URL)   
+            this.setState({
+                condition: response.data
+            })
+
+        } catch(e) {
+            console.log("Error in get condition: ", e)
+        }
 
     }
 
@@ -27,17 +36,21 @@ class LearnMore extends Component {
         console.log(this.state)
         if(this.state.condition !== null){
             return ( 
-                <div className='container shadow'>
-                    <div>
-                        <img src={this.state.condition.image}/>
+                <div className=' shadow main-panel-learn'>
+                    <div className=' sub-panel-learn-image'>
+                        <Image  src={this.state.condition.image}/>
                     </div>
-                    <div>
-                        <h3>{this.state.condition.name}</h3>
-                    </div>
-                    <div>
-                        <p>
-                            {this.state.condition.descriptionExtended}
-                        </p>
+                    <div className=' sub-panel-learn'>
+                        <div align='center'>
+                            <h3>{this.state.condition.name}</h3>
+                        </div>
+                        <hr/>
+                        <div>
+                            <p>
+                                {this.state.condition.descriptionExtended}
+                            </p>
+                        </div>
+
                     </div>
                 </div>
              );

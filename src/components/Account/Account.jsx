@@ -171,6 +171,7 @@ class Account extends Component {
                 state: this.state.state,
                 zip: this.state.zip
             })
+            window.location='http://localhost:3000/account';
         } catch (e) {
             console.log("Error in update profile: ", e);
         }
@@ -185,6 +186,7 @@ class Account extends Component {
                 height: this.state.height,
                 weight: this.state.weight
             })
+            window.location='http://localhost:3000/account';
         } catch (e) {
             console.log("Error in update profile: ", e);
         }
@@ -383,7 +385,7 @@ class Account extends Component {
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
                                             <label for="age">Age</label>
-                                            <input onChange={this.handleChange} type="text" className="form-control form-control-acc shadow" id="age" name='age' value={this.state.age}/>
+                                            <input onChange={this.handleChange} type="number" className="form-control form-control-acc shadow" id="age" name='age' value={this.state.age}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -395,13 +397,13 @@ class Account extends Component {
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
                                             <label for="height">Height</label>
-                                            <input onChange={this.handleChange} type="text" className="form-control form-control-acc shadow" id="height" name='height' value={this.state.height}/>
+                                            <input onChange={this.handleChange} type="number" className="form-control form-control-acc shadow" id="height" name='height' value={this.state.height}/>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="form-group">
                                             <label for="weight">Weight</label>
-                                            <input onChange={this.handleChange} type="url" className="form-control form-control-acc shadow" id="weight" name='weight' value={this.state.weight}/>
+                                            <input onChange={this.handleChange} type="number" className="form-control form-control-acc shadow" id="weight" name='weight' value={this.state.weight}/>
                                         </div>
                                     </div>
                                    

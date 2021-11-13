@@ -1,0 +1,37 @@
+.main-panel-learn {
+    background-color: #C9D6DF;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 80rem;
+    padding: 2rem;
+}
+
+.sub-panel-learn {
+    background-color: #F0F5F9;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    align-items: center;
+    height: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-panel-learn-image {
+    background-color: #F0F5F9;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    align-items: center;
+    height: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}

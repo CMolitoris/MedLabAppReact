@@ -43,7 +43,7 @@ class ConditionsOC extends Component {
                                                 {element.condition.description}
                                             </div>
                                         </div>
-                                    <Link to='/learn' onClick={() => this.props.selectCondition(element.condition)}>
+                                    <Link to={{pathname: '/learn', state: {condition: element.condition}}} onClick={() => this.props.selectCondition(element.condition)}>
                                         <Button onClick={() => this.props.selectCondition(element.condition)} className='w-100' id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
                                     </Link>
                                 </Card.Body>
