@@ -20,7 +20,7 @@ class LearnMore extends Component {
     getCondition = async () => {
         console.log(this.props)
         try {
-            let URL = `https://localhost:44394/api/Condition/1`
+            let URL = `https://localhost:44394/api/Condition/${this.props.condition.id}`
             let response = await axios.get(URL)   
             this.setState({
                 condition: response.data

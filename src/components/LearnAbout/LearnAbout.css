@@ -1,5 +1,5 @@
 .main-panel-about {
-    background-color: #C9D6DF;
+    background-color: rgb(201, 214, 223,0.3);
     border-radius: 1rem;
     margin-top: 1rem;
     margin-left: auto;
@@ -9,7 +9,7 @@
     padding: 2rem;
 }
 .sub-panel-accordion {
-    background-color: #59788E;
+    background-color: rgb(201, 214, 223,1);
     border-radius: 1rem;
     margin-top: 1rem;
     margin-left: auto;
@@ -29,7 +29,7 @@
     padding: 2rem;
 }
 .sub-panel-learnabout-outer {
-    background-color: #59788E;
+    background-color: rgb(201, 214, 223,1);
     border-radius: 1rem;
     margin-top: 1rem;
     margin-left: auto;

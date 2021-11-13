@@ -8,7 +8,7 @@
 }
 
 .card-panel {
-    background-color: rgb(240, 245, 249,0.7);
+    background-color: rgb(240, 245, 249);
     margin: 1rem;  
     border-radius: 0.3rem;  
     padding: 1rem;
@@ -16,7 +16,7 @@
 }
 
 .cond-panel-main {
-    background-color: #C9D6DF;
+    background-color: rgb(201, 214, 223,0.35);
     padding: 3rem;
     height: auto;   
     margin-top: 1rem;
@@ -27,7 +27,7 @@
 }
 
 .cond-panel-sec {
-    background-color: rgb(240, 245, 249,0.7);
+    background-color: rgb(240, 245, 249,1);
     margin: 1rem;
     
     border-radius: 0.3rem;  

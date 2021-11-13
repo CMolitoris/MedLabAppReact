@@ -129,7 +129,7 @@ const Landing = () => {
                     <div className="work-process">
                         <i className="fas fa-copy"></i>
                         <h3><a href="#">Track Your Forms</a></h3>
-                        <p>Store and track your results with our easy-to-navigate interface.</p>
+                        <p>Store and track your results with our easy-to-navigate interface. We built it with simplicity in mind.</p>
                     </div>
                 </div>
             </div>

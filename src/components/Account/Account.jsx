@@ -236,7 +236,7 @@ class Account extends Component {
         
         return ( 
             
-            <div className="container mt-3">
+            <div className="main-div-panel mt-3">
                 <div className="row">
                     <div className=" col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                         

@@ -13,7 +13,7 @@
     background-color: #C9D6DF;
     padding: 4rem;
     height: 25rem;
-    width: 72rem;
+    width: 85%;
     color: #1E2022;
     margin: 1rem;
     border-radius: 2rem;
@@ -21,10 +21,10 @@
 }
 
 .con-attributes-sec {
-    background-color: #C9D6DF;
+    background-color: rgb(201, 214, 223,0.9);
     padding: 2.4rem;
     height: auto;
-    width: 72rem;
+    width: 85%;
     color: #1E2022;
     margin: 1rem;
     border-radius: 2rem;
@@ -44,7 +44,7 @@
     padding: .5rem;
     height: 100%rem;
     width: 17rem;
-    margin-left: 47.5rem;
+    margin-left: 52rem;
     margin-top: 5.5rem;
     border-radius: .3rem;  
 }
@@ -78,7 +78,7 @@
 /*-- Workflow Section CSS --*/
 #Workflow {
     
-    background-color: #C9D6DF;
+    
     color: #1E2022;
 }
 #Workflow .work-process::after {
