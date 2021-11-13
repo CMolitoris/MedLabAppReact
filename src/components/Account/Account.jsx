@@ -289,7 +289,7 @@ class Account extends Component {
                         <div className="card-acc contain-scroll-two shadow ">    
                             <div className="mb-3 shadow cont-inner">
                             <h6 className="mb-3 text-primary">Nearby Treatment Facilities</h6>
-                                <GoogleMaps streetaddress={this.state.streetaddress}/>   
+                                {this.state.streetaddress && <GoogleMaps streetaddress={this.state.streetaddress}/>   }
                                
                             </div>
                             <div className="mb-3 shadow cont-inner">

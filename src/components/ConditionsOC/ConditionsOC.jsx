@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Offcanvas, Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './ConditionsOC.css';
 
 class ConditionsOC extends Component {
@@ -42,7 +43,9 @@ class ConditionsOC extends Component {
                                                 {element.condition.description}
                                             </div>
                                         </div>
-                                    <Button className='w-100' onClick={() => this.linkCondition(element.condition.id)} id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
+                                    <Link to='/learn' onClick={() => this.props.selectCondition(element.condition)}>
+                                        <Button onClick={() => this.props.selectCondition(element.condition)} className='w-100' id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
+                                    </Link>
                                 </Card.Body>
                             </Card>
                             )

@@ -257,7 +257,7 @@ class ConditionViewer extends Component {
             <div className="cond-panel-main" id="custom-font">
                 <div className="row">
                     
-                <ConditionsOC linkedConditions={this.state.linkedConditions} user={this.props.user}/>
+                <ConditionsOC selectCondition={this.props.selectCondition} linkedConditions={this.state.linkedConditions} user={this.props.user}/>
                 <FlaggedOC flaggedValues={this.state.flaggedValues}/>
                     <div className="col mt-3" >                 
                         <div align="center">
