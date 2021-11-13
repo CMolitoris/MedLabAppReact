@@ -21,7 +21,7 @@ const NavBar = (props) => {
                         <li className='nav-item'>
                             <a className='nav-link' onClick = {props.toggleRegisterModal}><i className="bi bi-shield-lock-fill"></i>  Register</a>
                         </li>
-                        
+                        <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i className="bi bi-house-fill"></i> Learn More</Link></li>
                     </React.Fragment>
                 }
                 {props.user && 
@@ -35,12 +35,13 @@ const NavBar = (props) => {
                         <li className='nav-item'>
                             <Link to='/conditions' className='nav-link'><i className="bi bi-person-fill"></i> Conditions</Link>
                         </li>
+                        <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i className="bi bi-house-fill"></i> Learn More</Link></li>
                         <li className='nav-item'>
                             <a onClick = {props.logoutUser} className='nav-link'><i className="bi bi-door-open-fill"></i> Log Out</a>
                         </li>
                     </React.Fragment>
                 }
-                <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i className="bi bi-house-fill"></i> Learn More</Link></li>
+                
             </ul>
         </nav>
      );
