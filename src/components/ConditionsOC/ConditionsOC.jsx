@@ -35,19 +35,19 @@ class ConditionsOC extends Component {
                             return (
                                 <Card className='mt-2 card shadow' key={i} style={{ width: '18rem' }}>
                             
-                                <Card.Body>
-                                    <Card.Title>{element.condition.name}</Card.Title>
-                                        <div>
-                                            <hr/>
-                                            <div className='card-scroll'>
-                                                {element.condition.description}
+                                    <Card.Body>
+                                        <Card.Title>{element.condition.name}</Card.Title>
+                                            <div>
+                                                <hr/>
+                                                <div className='card-scroll'>
+                                                    {element.condition.description}
+                                                </div>
                                             </div>
-                                        </div>
-                                    <Link to={{pathname: '/learn', state: {condition: element.condition}}} onClick={() => this.props.selectCondition(element.condition)}>
-                                        <Button onClick={() => this.props.selectCondition(element.condition)} className='w-100' id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
-                                    </Link>
-                                </Card.Body>
-                            </Card>
+                                        <Link to={{pathname: '/learn', state: {condition: element.condition}}} onClick={() => this.props.selectCondition(element.condition)}>
+                                            <Button onClick={() => this.props.selectCondition(element.condition)} className='w-100' id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
+                                        </Link>
+                                    </Card.Body>
+                                </Card>
                             )
                         })}
                     </Offcanvas.Body>
