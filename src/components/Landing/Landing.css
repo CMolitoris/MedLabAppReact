@@ -44,7 +44,7 @@
     padding: .5rem;
     height: 100%rem;
     width: 17rem;
-    margin-left: 52rem;
+    margin-left: 54rem;
     margin-top: 5.5rem;
     border-radius: .3rem;  
 }
@@ -113,7 +113,7 @@
 #Workflow .work-process i {
     margin: 0 auto;
     display: table;
-    background-color: #607d8b;
+    background-color: #52616B;
     width: 70px;
     height: 70px;
     border-radius: 8px;

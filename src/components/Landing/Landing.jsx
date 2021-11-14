@@ -103,7 +103,7 @@ const Landing = () => {
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     <div className="section-title">
-                        <h2 id='font-thicken' className="text-center">We Make It Simple.</h2>
+                        <h2 id='font-thicken' className="text-center">We Made It Simple.</h2>
                         <p className="text-center"><i>We are founded on the principle of empowering those seeking information about their health. </i></p>
                     </div>
                     <hr className="border-white mb-4 mt-4"/>
