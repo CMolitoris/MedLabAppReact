@@ -155,7 +155,7 @@ class App extends Component {
         this.setState({
           loggedUser: null
         })
-        if (location === '/account' || location === '/seller' || location === '/not-found' || location === '/cart'){
+        if (location === '/account' || location === '/forms' || location === '/not-found' || location === '/learn' || location === '/learn-about' || location === '/conditions'){
           window.location = "/"
         }
     }
