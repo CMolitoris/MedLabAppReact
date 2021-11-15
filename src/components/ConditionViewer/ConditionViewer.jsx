@@ -71,7 +71,8 @@ class ConditionViewer extends Component {
                             value: String(this.state.bmpTests[i].bmp.sodium),
                             high: false,
                             dateTime: this.state.bmpTests[i].bmp.dateTime,
-                            type: 'BMP'
+                            type: 'BMP',
+                            difference: 135-this.state.bmpTests[i].bmp.sodium
                         })
                     }
                 }
@@ -83,7 +84,8 @@ class ConditionViewer extends Component {
                             value: String(this.state.bmpTests[i].bmp.potassium),
                             high: false,
                             dateTime: this.state.bmpTests[i].bmp.dateTime,
-                            type: 'BMP'
+                            type: 'BMP',
+                            difference: 3.5 - this.state.bmpTests[i].bmp.potassium
                         })
                     }
                 }
@@ -95,7 +97,8 @@ class ConditionViewer extends Component {
                             value: String(this.state.bmpTests[i].bmp.glucose),
                             high: true,
                             dateTime: this.state.bmpTests[i].bmp.dateTime,
-                            type: 'BMP'
+                            type: 'BMP',
+                            difference: this.state.bmpTests[i].bmp.glucose - 100
                         })
                     }
                 }
@@ -107,7 +110,8 @@ class ConditionViewer extends Component {
                             value: String(this.state.bmpTests[i].bmp.creatinine),
                             high: true,
                             dateTime: this.state.bmpTests[i].bmp.dateTime,
-                            type: 'BMP'
+                            type: 'BMP',
+                            difference: this.state.bmpTests[i].bmp.creatinine - 1.2
                         })
                     }
                 }
@@ -119,24 +123,25 @@ class ConditionViewer extends Component {
                             value: String(this.state.bmpTests[i].bmp.bicarbonate),
                             high: true,
                             dateTime: this.state.bmpTests[i].bmp.dateTime,
-                            type: 'BMP'
+                            type: 'BMP',
+                            difference: this.state.bmpTests[i].bmp.bicarbonate - 29
                         })
                     }
                 }
             }
     
-            this.state.cbcTests.forEach((element) => {
-                
+            this.state.cbcTests.forEach((element) => {           
                 console.log(element)
                 if(element.cbc.lym > 44){
                     if (newTestIds.includes(6) === false) {
                         newTestIds.push(6);
                         newFlags.push({
-                            analyte:'Neutrophils',
+                            analyte:'Lymphocytes',
                             value: String(element.cbc.lym),
                             high: true,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: element.cbc.lym - 44
                         })
                     }
                 }
@@ -144,11 +149,12 @@ class ConditionViewer extends Component {
                     if (newTestIds.includes(6) === false) {
                         newTestIds.push(6);
                         newFlags.push({
-                            analyte:'Neutrophils',
+                            analyte:'White Blood Cells',
                             value: String(element.cbc.wbc),
                             high: true,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: element.cbc.wbc - 10.16
                         })
                     }
                 }
@@ -160,7 +166,8 @@ class ConditionViewer extends Component {
                             value: String(element.cbc.neu),
                             high: true,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: element.cbc.neu - 70
                         })
                     }
                 }
@@ -172,7 +179,8 @@ class ConditionViewer extends Component {
                             value: String(element.cbc.mon),
                             high: true,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: element.cbc.mon - 11
                         })
                     }
                 }
@@ -184,7 +192,8 @@ class ConditionViewer extends Component {
                             value: String(element.cbc.rbc),
                             high: false,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: 4.3 - element.cbc.rbc
                         })
                     }
                 }
@@ -196,7 +205,8 @@ class ConditionViewer extends Component {
                             value: String(element.cbc.RDW),
                             high: true,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: element.cbc.RDW - 15.8
                         })
                     }
                 }
@@ -208,7 +218,8 @@ class ConditionViewer extends Component {
                             value: String(element.cbc.plt),
                             high: false,
                             dateTime: element.cbc.dateTime,
-                            type: 'CBC'
+                            type: 'CBC',
+                            difference: 150 - element.cbc.plt
                         })
                     }
                 }
@@ -259,13 +270,13 @@ class ConditionViewer extends Component {
                     
                 <ConditionsOC selectCondition={this.props.selectCondition} linkedConditions={this.state.linkedConditions} user={this.props.user}/>
                 <FlaggedOC flaggedValues={this.state.flaggedValues}/>
-                    <div className="col mt-3" >                 
-                        <div align="center">
-                            <div className='cond-panel-sec cont-scroll row'>                            
+                    <div className=" mt-3" >                 
+                        <div className='container' align="center">
+                            <div className='row  '>                            
                                 {this.state.conditions.map((element,i) => {
                                     return (
-                                        <div className='col shadow card-panel'>
-                                            <Card className='mt-2 ' key={i} style={{ width: '20rem' }}>
+                                        <div className='col-4  '>
+                                            <Card className='mt-2 ' key={i} style={{ width: 'auto' }}>
                                                 <Card.Img className='card-image'  src={element.image} />
                                                 <Card.Body>
                                                     <Card.Title>{element.name}</Card.Title>

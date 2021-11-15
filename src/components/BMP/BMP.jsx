@@ -93,56 +93,56 @@ const BMP = () => {
 
             <Form onSubmit={handleSubmit}> 
                     <Form.Group className="mb-1" controlId='Sodium'>
-                        <FloatingLabel label="Sodium">
+                        <FloatingLabel label="Sodium (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Sodium..." name="Sodium" value={bmpValues.Sodium}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Potassium'>
-                        <FloatingLabel label="Potassium">
+                        <FloatingLabel label="Potassium (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Potassium..." name="Potassium" value={bmpValues.Potassium}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Glucose'>
-                        <FloatingLabel label="Glucose">
+                        <FloatingLabel label="Glucose (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Glucose..." name="Glucose" value={bmpValues.Glucose}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Calcium'>
-                        <FloatingLabel label="Calcium">
+                        <FloatingLabel label="Calcium (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Calcium..." name="Calcium" value={bmpValues.Calcium}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Chloride'>
-                        <FloatingLabel label="Chloride">
+                        <FloatingLabel label="Chloride (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Chloride..." name="Chloride" value={bmpValues.Chloride}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Bicarbonate'>
-                        <FloatingLabel label="Bicarbonate">
+                        <FloatingLabel label="Bicarbonate (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Bicarbonate..." name="Bicarbonate" value={bmpValues.Bicarbonate}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Creatinine'>
-                        <FloatingLabel label="Creatinine">
+                        <FloatingLabel label="Creatinine (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Creatinine..." name="Creatinine" value={bmpValues.Creatinine}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='BUN'>
-                        <FloatingLabel label="BUN">
+                        <FloatingLabel label="BUN (mg/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="BUN..." name="BUN" value={bmpValues.BUN}/>
                         </FloatingLabel>
                     </Form.Group>

@@ -21,21 +21,21 @@ const NavBar = (props) => {
                         <li className='nav-item'>
                             <a className='nav-link' onClick = {props.toggleRegisterModal}><i className="bi bi-shield-lock-fill"></i>  Register</a>
                         </li>
-                        <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i className="bi bi-house-fill"></i> Learn More</Link></li>
+                        <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i class="bi bi-lightbulb-fill"></i> Learn More</Link></li>
                     </React.Fragment>
                 }
                 {props.user && 
                     <React.Fragment>
                         <li className='nav-item'>
-                            <Link to='/forms' className='nav-link'><i className="bi bi-pen-fill"></i> Labs </Link>
+                            <Link to='/forms' className='nav-link'><i className="bi bi-pen-fill"></i> Forms </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/account' className='nav-link'><i className="bi bi-person-fill"></i> Account</Link>
+                            <Link to='/account' className='nav-link'><i class="bi bi-person-bounding-box"></i> Account</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/conditions' className='nav-link'><i className="bi bi-person-fill"></i> Conditions</Link>
+                            <Link to='/conditions' className='nav-link'><i class="bi bi-bandaid-fill"></i> Conditions</Link>
                         </li>
-                        <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i className="bi bi-house-fill"></i> Learn More</Link></li>
+                        <li className='nav-item'><Link to  = '/learn-about' className='nav-link'><i class="bi bi-lightbulb-fill"></i> Learn More</Link></li>
                         <li className='nav-item'>
                             <a onClick = {props.logoutUser} className='nav-link'><i className="bi bi-door-open-fill"></i> Log Out</a>
                         </li>

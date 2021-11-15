@@ -292,7 +292,7 @@ class Account extends Component {
                             <div className="mb-3 shadow cont-inner">
                             <h6 className="mb-3 text-primary">Nearby Treatment Facilities</h6>
                                 {this.state.streetaddress && <GoogleMaps streetaddress={this.state.streetaddress}/>   }
-                               
+                                {!this.state.streetaddress && <div className='map-alt'><i>Please enter address for map details</i></div>}
                             </div>
                             <div className="mb-3 shadow cont-inner">
                                 <div className="row  ">

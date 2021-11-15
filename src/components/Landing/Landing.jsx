@@ -16,7 +16,7 @@ const Landing = () => {
         if (!user) {
             alert("You must login or register to continue!")
         } else {
-            alert("You are logged in!")
+            window.location='http://localhost:3000/forms';
         }
     }
 

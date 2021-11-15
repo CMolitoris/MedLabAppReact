@@ -5,6 +5,11 @@
         width: 85%;
         
     }
+    .map-alt {
+        border-radius: 1rem;
+        background-color: #F0F5F9;
+        width: 40%;
+    }
     
     
     .card-acc-one {
@@ -15,7 +20,6 @@
         border: 0;
         overflow-y: hidden;
         height: 57rem;
-        
     }
 
     .card-acc {

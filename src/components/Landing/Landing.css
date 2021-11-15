@@ -44,15 +44,15 @@
     padding: .5rem;
     height: 100%rem;
     width: 17rem;
-    margin-left: 54rem;
+    margin-left: 75%;
     margin-top: 5.5rem;
     border-radius: .3rem;  
 }
 
 .opin-attributes-inner {
     padding: .5rem;
-    height: 100%rem;
-    width: 100%rem;
+    height: 100%;
+    width: 100%;
     border-radius: .3rem;
     
     

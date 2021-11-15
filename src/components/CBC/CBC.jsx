@@ -110,97 +110,97 @@ const CBC = () => {
 
             <Form  onSubmit={handleSubmit}> 
                     <Form.Group className="mb-1" controlId='Rbc'>
-                        <FloatingLabel label="Red Blood Cell">
+                        <FloatingLabel label="Red Blood Cell (× 10⁶/microL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Rbc..." name="Rbc" value={cbcValues.Rbc}/>
                         </FloatingLabel>
                     </Form.Group>
               
                     <Form.Group className="mb-1" controlId='Hb'>
-                        <FloatingLabel label="Hemoglobin">
+                        <FloatingLabel label="Hemoglobin (g/dL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Hb..." name="Hb" value={cbcValues.Hb}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Hct'>
-                        <FloatingLabel label="Hematocrit">
+                        <FloatingLabel label="Hematocrit (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Hct..." name="Hct" value={cbcValues.Hct}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='MCV'>
-                        <FloatingLabel label="Mean Corpuscular Volume">
+                        <FloatingLabel label="Mean Corpuscular Volume (fL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="MCV..." name="MCV" value={cbcValues.MCV}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='MCH'>
-                        <FloatingLabel label="Mean Corpuscular Hemoglobin">
+                        <FloatingLabel label="Mean Corpuscular Hemoglobin (fL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="MCH..." name="MCH" value={cbcValues.MCH}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='MCHC'>
-                        <FloatingLabel label="Mean Corpuscular Hemoglobin Concentration">
+                        <FloatingLabel label="Mean Corpuscular Hemoglobin Concentration (fL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="MCHC..." name="MCHC" value={cbcValues.MCHC}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='RDW'>
-                        <FloatingLabel label="Red Cell Distribution Width">
+                        <FloatingLabel label="Red Cell Distribution Width (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="RDW..." name="RDW" value={cbcValues.RDW}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='WBC'>
-                        <FloatingLabel label="White Blood Cell">
+                        <FloatingLabel label="White Blood Cell (× 10³/microL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="WBC..." name="WBC" value={cbcValues.WBC}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Neu'>
-                        <FloatingLabel label="Neutrophil">
+                        <FloatingLabel label="Neutrophil (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Neu..." name="Neu" value={cbcValues.Neu}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Lym'>
-                        <FloatingLabel label="Lymphocyte">
+                        <FloatingLabel label="Lymphocyte (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Lym..." name="Lym" value={cbcValues.Lym}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Mon'>
-                        <FloatingLabel label="Monocyte">
+                        <FloatingLabel label="Monocyte (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Mon..." name="Mon" value={cbcValues.Mon}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Eos'>
-                        <FloatingLabel label="Eosinophil">
+                        <FloatingLabel label="Eosinophil (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Eos..." name="Eos" value={cbcValues.Eos}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Bas'>
-                        <FloatingLabel label="Basophil">
+                        <FloatingLabel label="Basophil (%)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Bas..." name="Bas" value={cbcValues.Bas}/>
                         </FloatingLabel>
                     </Form.Group>
                 
                 
                     <Form.Group className="mb-1" controlId='Plt'>
-                        <FloatingLabel label="Platelet">
+                        <FloatingLabel label="Platelet (× 10³/microL)">
                             <Form.Control step="0.1" type='number' className="shadow" onChange={handleChange} placeholder="Plt..." name="Plt" value={cbcValues.Plt}/>
                         </FloatingLabel>
                     </Form.Group>

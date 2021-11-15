@@ -9,8 +9,8 @@ const Forms = () => {
    const [testType, setTestType] = useState('');
 
     return ( 
-        <div className=' lab-bg' >
-            <div className='mx-auto my-auto con-attributes-form shadow '>
+        <div className=' ' >
+            <div className='mt-4 mx-auto my-auto con-attributes-form shadow '>
                 <div className='form-inner'>
                     <div className="">
                         {testType==='' && <h3 className="shadow post-title-font cent-style">Select Test</h3>}

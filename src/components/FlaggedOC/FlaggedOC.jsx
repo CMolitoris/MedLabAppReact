@@ -45,11 +45,11 @@ class FlaggedOC extends Component {
                                     <div>
                                         <hr/>
                                         <div >
-                                            <span className='flagged-text'>{element.analyte}: {element.value} {element.high===true? <i class="bi bi-arrow-up-short"></i>:<i class="bi bi-arrow-down-short"></i>}</span><br/>       
+                                            <span className='flagged-text'>{element.analyte}: {element.value} ({element.difference.toFixed(2)}{element.high===true? <i class="bi bi-arrow-up-short"></i>:<i class="bi bi-arrow-down-short"></i>})</span><br/>       
                                             <span>{moment(element.dateTime).format('LLL')}</span>
                                         </div>
                                     </div>
-                                    <Button className='w-100 mt-3' onClick={() => this.linkCondition(element.condition.id)} id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
+                                    <Button className='w-100 mt-3' onClick={() => this.linkCondition(element.condition.id)} id="button-color">{element.analyte} <i class="bi bi-info-square"></i></Button>
                                 </Card.Body>
                             </Card>
                             )

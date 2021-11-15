@@ -76,13 +76,13 @@ class LearnAbout extends Component {
                                     <Card className='mt-2 card shadow' key={i} style={{ width: 'auto' }}>
                                 
                                         <Card.Body>
-                                            <Card.Title>{element.name}</Card.Title>
-                                                <div>
+                                            <Card.Title className='header-learnabout'>{element.name}</Card.Title>
+                                               
                                                     <hr/>
-                                                    <div className='card-scroll'>
+                                                    <div className='card-scroll blocktext p-3'>
                                                         {element.description}
                                                     </div>
-                                                </div>
+                                                
                                             <Link to={{pathname: '/learn', state: {condition: element}}} onClick={() => this.props.selectCondition(element)}>
                                                 <Button onClick={() => this.props.selectCondition(element)} className='w-100' id="button-color">Learn More <i class="bi bi-info-square"></i></Button>
                                             </Link>
