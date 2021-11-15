@@ -12,13 +12,17 @@ Google Geocoding, JavaScript Maps, Places API's
 This application allows the user to input data from their laboratory tests and recieve a presumtive diagnosis/list of conditions. The User will first be presented with the landing page as seen below. Here the user will be able to register and then login. There is a "Get Started" button to facilitate ease of use and efficient UX. The styling used here is designed to fit that of a clinical laboratory while maintaining professionalism. 
 
 ![Alt text](./Screenshots/LandingOne.png?raw=true "Landing, Top")
+
 ![Alt text](./Screenshots/LandingTwo.png?raw=true "Landing, Bottom")
+
 ![Alt text](./Screenshots/RegisterLanding.png?raw=true "Register Off-canvas")
+
 ![Alt text](./Screenshots/LoginLanding.png?raw=true "Login Off-canvas")
 
 The user would then be sent to a laboratory test results input page where they would do the aforementioned. No understanding of these results is required. The user must only enter what they see on their laboratory results. The theme of this application is to give power to the patient/user and recieve an objective response regarding data to make decisions.
 
 ![Alt text](./Screenshots/BMPForm.png?raw=true "BMP Form, Top")
+
 ![Alt text](./Screenshots/CBCForm.png?raw=true "CBC, Bottom")
 
 After entering their results, the user will be asked if they would like to submit multiple forms and proceed based on that action.
