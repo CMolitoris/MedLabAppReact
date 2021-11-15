@@ -1,5 +1,14 @@
 // -- Medical Laboratory Test Results Interpreter -- //
 
+Technologies Used:
+React & JavaScript
+ASP.NET MVC & C#
+Bootstrap
+Sass
+CSS
+HTML
+Google Geocoding, JavaScript Maps, Places API's
+
 This application allows the user to input data from their laboratory tests and recieve a presumtive diagnosis/list of conditions. The User will first be presented with the landing page as seen below. Here the user will be able to register and then login. There is a "Get Started" button to facilitate ease of use and efficient UX. The styling used here is designed to fit that of a clinical laboratory while maintaining professionalism. 
 
 ![Alt text](./Screenshots/LandingOne.png?raw=true "Landing, Top")
@@ -45,15 +54,6 @@ User's will have the ability to learn more in this next component where they can
 Upon selecting a condition, the user will be brought to a page that highlights the targeted condition and gives them access to more details to view/read.
 
 ![Alt text](./Screenshots/LearnAboutTarget.png?raw=true "Learn About Target")
-
-Technologies Used:
-React & JavaScript
-ASP.NET MVC & C#
-Bootstrap
-Sass
-CSS
-HTML
-Google Geocoding, JavaScript Maps, Places API's
 
 Note:
 There is generally a delay from when lab results are released and providers relaying information as well as lapses in communication between numerical value correlation. This gives the patient the ability to directly see what conditions they would potentially be facing with high accuracy.
