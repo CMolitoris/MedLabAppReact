@@ -186,14 +186,6 @@ class App extends Component {
                                 <Route path="/conditions" render={props => <ConditionViewer {...props} selectCondition={this.setSelectedCondition} user={this.state.loggedUser} bmpTests={this.state.bmpTests} cbcTests={this.state.cbcTests} conditions={this.state.conditions}/>} />
                                 <Route path='/learn' render={props => <LearnMore {...props} condition={this.state.selectedCondition}/>} />
                                 <Route path='/learn-about' render={props => <LearnAbout {...props} conditions={this.state.conditions} selectCondition={this.setSelectedCondition}/>} />
-                                {/* <Route path = "/products" render={props => <Products {...props} user={this.state.loggedUser} carModels = {this.state.carModels} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} />} /> */}
-                                
-                                {/* <Route path = "/car-details" render={props => <CarDetails {...props} postRating={this.postRating} user={this.state.loggedUser} addToCart={this.addToCart} cars={this.state.cars} getAllCars={this.getAllCars} getSingleCar={this.getSingleCar} car={this.state.car} getCarRatings={this.getCarRatings} ratings={this.state.ratings}/>} />
-                                
-                                
-                                <Route path = "/account" render = {props => <EditAccount {...props } userInfo = {this.state.userInfo} updateDetails = {this.editUser} user = {this.state.loggedUser}/>} />
-                                
-                                <Redirect to='/not-found' /> */}
                                 <Redirect to="/not-found" />
                             </Switch>
                         </div>

@@ -186,7 +186,7 @@ class Account extends Component {
                 height: this.state.height,
                 weight: this.state.weight
             })
-            window.location='http://localhost:3000/account';
+            // window.location='http://localhost:3000/account';
         } catch (e) {
             console.log("Error in update profile: ", e);
         }
